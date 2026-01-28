@@ -21,37 +21,31 @@ const Experience = () => {
       role: 'Software Developer',
       company: 'Metadome.ai, HP Inc',
       logo: '✦',
-    }
+    },
   ]
 
   return (
-    <section className="py-[70px] px-6 md:px-9">
+    <section className="px-6 py-[70px] md:px-9">
       <div
         ref={ref}
-        className={`max-w-[500px] mx-auto transition-all duration-1000 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        className={`mx-auto max-w-[500px] transition-all duration-1000 ${
+          isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}
       >
         {/* Section Title */}
-        <h2 className="text-2xl md:text-3xl font-semibold text-dark mb-10">
-          Work Experience
-        </h2>
+        <h2 className="mb-10 text-2xl font-semibold text-dark md:text-3xl">Work Experience</h2>
 
         {/* Experience List */}
         <div className="space-y-6">
           {experiences.map((exp, index) => (
             <div key={index} className="flex items-center gap-6 md:gap-4">
               {/* Period */}
-              <span className="text-sm text-secondary w-[120px] shrink-0">
-                {exp.period}
-              </span>
+              <span className="w-[120px] shrink-0 text-sm text-secondary">{exp.period}</span>
 
               {/* Role and Company */}
-              <div className="flex items-center gap-2 flex-wrap">
-                <span className="text-base text-dark">
-                  {exp.role}
-                </span>
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-white border border-gray-200 rounded-full text-sm font-medium">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="text-base text-dark">{exp.role}</span>
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-gray-200 bg-white px-3 py-1 text-sm font-medium">
                   {exp.logo && <span>{exp.logo}</span>}
                   {exp.company}
                 </span>
@@ -60,8 +54,6 @@ const Experience = () => {
           ))}
         </div>
 
-        {/* Divider */}
-        <div className="border-t border-gray-200 mt-16" />
       </div>
     </section>
   )

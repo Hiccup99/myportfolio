@@ -23,21 +23,17 @@ const Services = () => {
   ]
 
   return (
-    <section className="py-[70px] px-6 md:px-9">
+    <section className="px-6 py-[70px] md:px-9">
       <div
         ref={ref}
-        className={`max-w-[500px] mx-auto transition-all duration-1000 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        className={`mx-auto max-w-[500px] transition-all duration-1000 ${
+          isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}
       >
         {/* Section Title */}
-        <div className="text-center mb-10">
-          <h2 className="text-2xl md:text-3xl font-semibold text-dark mb-3">
-            How Can I Help?
-          </h2>
-          <p className="text-dark-light">
-            Let's turn your vision into something amazing.
-          </p>
+        <div className="mb-10 text-center">
+          <h2 className="mb-3 text-2xl font-semibold text-dark md:text-3xl">How Can I Help?</h2>
+          <p className="text-dark-light">Let's turn your vision into something amazing.</p>
         </div>
 
         {/* Services Grid */}
@@ -45,28 +41,18 @@ const Services = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="border border-gray-200 rounded-2xl p-5 hover:border-gray-300 transition-colors cursor-pointer"
+              className="cursor-pointer rounded-2xl border border-gray-200 p-5 transition-colors hover:border-gray-300"
             >
               {/* Stacked mockup images */}
-              <div className="relative h-[80px] mb-4">
-                <div className="absolute left-0 top-2 w-[60px] h-[70px] bg-white rounded-lg shadow-md -rotate-6 overflow-hidden">
-                  <img
-                    src={service.image}
-                    alt=""
-                    className="w-full h-full object-cover"
-                  />
+              <div className="relative mb-4 h-[80px]">
+                <div className="absolute left-0 top-2 h-[70px] w-[60px] -rotate-6 overflow-hidden rounded-lg bg-white shadow-md">
+                  <img src={service.image} alt="" className="h-full w-full object-cover" />
                 </div>
-                <div className="absolute left-6 top-0 w-[60px] h-[70px] bg-white rounded-lg shadow-md rotate-6 overflow-hidden">
-                  <img
-                    src={service.image}
-                    alt=""
-                    className="w-full h-full object-cover"
-                  />
+                <div className="absolute left-6 top-0 h-[70px] w-[60px] rotate-6 overflow-hidden rounded-lg bg-white shadow-md">
+                  <img src={service.image} alt="" className="h-full w-full object-cover" />
                 </div>
               </div>
-              <h3 className="text-base font-medium text-dark">
-                {service.title}
-              </h3>
+              <h3 className="text-base font-medium text-dark">{service.title}</h3>
             </div>
           ))}
         </div>

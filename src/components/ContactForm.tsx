@@ -41,14 +41,14 @@ const ContactForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         <input
           type="text"
           name="name"
           required
           value={formData.name}
           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-          className="w-full h-12 px-4 text-sm bg-gray-50 border border-transparent rounded-xl focus:outline-none focus:border-primary transition-colors duration-200"
+          className="h-12 w-full rounded-xl border border-transparent bg-gray-50 px-4 text-sm transition-colors duration-200 focus:border-primary focus:outline-none"
           placeholder="Full Name"
         />
         <input
@@ -57,7 +57,7 @@ const ContactForm = () => {
           required
           value={formData.email}
           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-          className="w-full h-12 px-4 text-sm bg-gray-50 border border-transparent rounded-xl focus:outline-none focus:border-primary transition-colors duration-200"
+          className="h-12 w-full rounded-xl border border-transparent bg-gray-50 px-4 text-sm transition-colors duration-200 focus:border-primary focus:outline-none"
           placeholder="Email Address"
         />
       </div>
@@ -68,26 +68,26 @@ const ContactForm = () => {
         rows={6}
         value={formData.message}
         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-        className="w-full px-4 py-3 text-sm bg-gray-50 border border-transparent rounded-xl focus:outline-none focus:border-primary transition-colors duration-200 resize-y"
+        className="w-full resize-y rounded-xl border border-transparent bg-gray-50 px-4 py-3 text-sm transition-colors duration-200 focus:border-primary focus:outline-none"
         placeholder="Write your Message"
       />
 
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full h-12 bg-dark text-white text-sm rounded-xl hover:bg-dark/90 transition-all duration-200 font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+        className="h-12 w-full rounded-xl bg-dark text-sm font-medium text-white transition-all duration-200 hover:bg-dark/90 disabled:cursor-not-allowed disabled:opacity-50"
       >
         {isSubmitting ? 'Sending...' : 'Send Message'}
       </button>
 
       {submitStatus === 'success' && (
-        <div className="p-4 bg-green-accent/10 border border-green-accent rounded-xl text-green-accent text-center text-sm">
+        <div className="rounded-xl border border-green-accent bg-green-accent/10 p-4 text-center text-sm text-green-accent">
           Thank you! Your message has been sent successfully.
         </div>
       )}
 
       {submitStatus === 'error' && (
-        <div className="p-4 bg-red-50 border border-red-300 rounded-xl text-red-600 text-center text-sm">
+        <div className="rounded-xl border border-red-300 bg-red-50 p-4 text-center text-sm text-red-600">
           Something went wrong. Please try again or email me directly.
         </div>
       )}

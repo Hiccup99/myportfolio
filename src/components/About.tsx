@@ -4,49 +4,47 @@ const About = () => {
   const { ref, isVisible } = useScrollAnimation()
 
   return (
-    <section id="about" className="pt-[50px] pb-[30px] px-6 md:px-9">
+    <section id="about" className="px-6 pb-[30px] pt-[50px] md:px-9">
       <div
         ref={ref}
-        className={`max-w-xl mx-auto md:mx-0 md:ml-[15%] transition-all duration-1000 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        className={`mx-auto max-w-xl transition-all duration-1000 md:mx-0 md:ml-[15%] ${
+          isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}
       >
         {/* Section Title */}
-        <h2 className="text-2xl md:text-3xl font-semibold text-dark mb-6">
-          About
-        </h2>
+        <h2 className="mb-10 text-2xl font-semibold text-dark md:text-3xl">About</h2>
 
         {/* Text Content */}
-        <p className="text-base text-dark-light mb-4 leading-relaxed">
-        I’m Sidharth, a product leader with a deep engineering background, currently building and 
-        scaling AI-powered B2B platforms. I’m drawn to problems where data, AI, and trust meet—and 
-        where product decisions meaningfully shape how teams work and grow.
+        <p className="mb-4 text-base leading-relaxed text-dark-light">
+          I’m Sidharth, a product leader with a deep engineering background, currently building and
+          scaling AI-powered B2B platforms. I’m drawn to problems where data, AI, and trust meet—and
+          where product decisions meaningfully shape how teams work and grow.
         </p>
-        <p className="text-base text-dark-light mb-10 leading-relaxed">
-         I love building from first principles, working closely with customers, 
-         and turning ambitious ideas into products that deliver real-world impact.
+        <p className="mb-10 text-base leading-relaxed text-dark-light">
+          I love building from first principles, working closely with customers, and turning
+          ambitious ideas into products that deliver real-world impact.
         </p>
 
         {/* Polaroid Photos - Overlapping */}
-        <div className="relative h-[280px] flex items-center justify-center mt-6">
+        <div className="relative mt-6 flex h-[280px] items-center justify-center">
           {/* Photo 1 - Behind, tilted left */}
-          <div className="absolute -rotate-6 bg-white p-2 shadow-lg z-10 -translate-x-8">
+          <div className="absolute z-10 -translate-x-8 -rotate-6 bg-white p-2 shadow-lg">
             <img
               src="about/interstellar.avif"
               alt="Travel photo"
-              className="w-[180px] h-[150px] object-cover"
+              className="h-[150px] w-[180px] object-cover"
             />
-            <p className="text-[10px] text-dark-light mt-2 italic">Le me among stars !</p>
+            <p className="mt-2 text-[10px] italic text-dark-light">Le me among stars !</p>
           </div>
 
           {/* Photo 2 - Front, tilted right */}
-          <div className="absolute rotate-6 bg-white p-2 shadow-lg z-9 translate-x-20 translate-y-20">
+          <div className="z-9 absolute translate-x-20 translate-y-20 rotate-6 bg-white p-2 shadow-lg">
             <img
               src="about/paint.avif"
               alt="Japan photo"
-              className="w-[180px] h-[180px] object-cover"
+              className="h-[180px] w-[180px] object-cover"
             />
-            <p className="text-[10px] text-dark-light mt-2 italic">I can paint?</p>
+            <p className="mt-2 text-[10px] italic text-dark-light">I can paint?</p>
           </div>
         </div>
       </div>

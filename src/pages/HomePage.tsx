@@ -12,7 +12,7 @@ const HomePage = () => {
     <div className="min-h-screen bg-white">
       <Navigation />
       {/* Page container with left and right borders */}
-      <div className="max-w-[900px] mx-auto border-l border-r border-gray-200">
+      <div className="mx-auto max-w-[900px] border-l border-r border-gray-200">
         <main>
           <Hero />
           <About />

@@ -11,12 +11,12 @@ const ProjectDetail = () => {
 
   if (!project) {
     return (
-      <div className="min-h-screen bg-white flex items-center justify-center">
+      <div className="flex min-h-screen items-center justify-center bg-white">
         <div className="text-center">
-          <h1 className="text-2xl font-semibold text-dark mb-4">Project not found</h1>
+          <h1 className="mb-4 text-2xl font-semibold text-dark">Project not found</h1>
           <button
             onClick={() => navigate('/')}
-            className="text-dark-light hover:text-dark transition-colors"
+            className="text-dark-light transition-colors hover:text-dark"
           >
             Go back home
           </button>
@@ -28,20 +28,15 @@ const ProjectDetail = () => {
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
-      <div className="max-w-[900px] mx-auto border-l border-r border-gray-200">
-        <main className="pt-32 pb-20">
-          <div className="max-w-[550px] mx-auto px-6 md:px-9">
+      <div className="mx-auto max-w-[900px] border-l border-r border-gray-200">
+        <main className="pb-20 pt-32">
+          <div className="mx-auto max-w-[550px] px-6 md:px-9">
             {/* Go back link */}
             <button
               onClick={() => navigate('/')}
-              className="inline-flex items-center gap-2 text-dark-light hover:text-dark transition-colors mb-8"
+              className="mb-8 inline-flex items-center gap-2 text-dark-light transition-colors hover:text-dark"
             >
-              <svg
-                className="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
+              <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -53,8 +48,8 @@ const ProjectDetail = () => {
             </button>
 
             {/* Header - Title and Live Website button */}
-            <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-12">
-              <h1 className="text-2xl md:text-1xl font-semibold text-dark leading-tight">
+            <div className="mb-12 flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+              <h1 className="md:text-1xl text-2xl font-semibold leading-tight text-dark">
                 {project.title}
               </h1>
               {project.liveUrl && (
@@ -62,15 +57,10 @@ const ProjectDetail = () => {
                   href={project.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 border border-gray-200 rounded-full text-sm font-medium text-dark hover:bg-gray-50 transition-colors whitespace-nowrap"
+                  className="inline-flex items-center gap-2 whitespace-nowrap rounded-full border border-gray-200 px-6 py-3 text-sm font-medium text-dark transition-colors hover:bg-gray-50"
                 >
                   Live Website
-                  <svg
-                    className="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
+                  <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -84,12 +74,12 @@ const ProjectDetail = () => {
 
             {/* Hero Image - Device Mockup */}
             <div className="mb-16">
-              <div className="bg-[#e8e8e8] rounded-[24px] p-6 shadow-sm">
-                <div className="rounded-[16px] overflow-hidden">
+              <div className="rounded-[24px] bg-[#e8e8e8] p-6 shadow-sm">
+                <div className="overflow-hidden rounded-[16px]">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full aspect-[16/10] object-cover"
+                    className="aspect-[16/10] w-full object-cover"
                   />
                 </div>
               </div>
@@ -97,27 +87,24 @@ const ProjectDetail = () => {
 
             {/* Project Overview */}
             <section className="mb-16">
-              <h2 className="text-2xl font-semibold text-dark mb-4">Project Overview</h2>
-              <p className="text-dark-light leading-relaxed">{project.overview}</p>
+              <h2 className="mb-4 text-2xl font-semibold text-dark">Project Overview</h2>
+              <p className="leading-relaxed text-dark-light">{project.overview}</p>
             </section>
 
             {/* Solution */}
             <section className="mb-16">
-              <h2 className="text-2xl font-semibold text-dark mb-4">Solution</h2>
-              <p className="text-dark-light leading-relaxed mb-8">{project.solution}</p>
+              <h2 className="mb-4 text-2xl font-semibold text-dark">Solution</h2>
+              <p className="mb-8 leading-relaxed text-dark-light">{project.solution}</p>
 
               {/* Solution Images */}
               {project.solutionImages && project.solutionImages.length > 0 && (
                 <div>
                   {project.solutionImages.map((img, index) => (
-                    <div
-                      key={index}
-                      className="rounded-[16px] overflow-hidden bg-gray-100"
-                    >
+                    <div key={index} className="overflow-hidden rounded-[16px] bg-gray-100">
                       <img
                         src={img}
                         alt={`Solution ${index + 1}`}
-                        className="w-full aspect-square object-cover"
+                        className="aspect-square w-full object-cover"
                       />
                     </div>
                   ))}
@@ -127,12 +114,11 @@ const ProjectDetail = () => {
 
             {/* Get in touch section */}
             <section className="pt-8">
-              <h2 className="text-2xl font-semibold text-dark mb-4">Get in touch</h2>
-              <p className="text-dark-light mb-8 leading-relaxed">
-                I'm always interested in exploring new opportunities, collaborating, or
-                exchanging ideas with like-minded individuals. Feel free to book a call
-                or email me if you'd like to see my portfolio deck or to discuss a
-                potential project.
+              <h2 className="mb-4 text-2xl font-semibold text-dark">Get in touch</h2>
+              <p className="mb-8 leading-relaxed text-dark-light">
+                I'm always interested in exploring new opportunities, collaborating, or exchanging
+                ideas with like-minded individuals. Feel free to book a call or email me if you'd
+                like to see my portfolio deck or to discuss a potential project.
               </p>
 
               <ContactForm />

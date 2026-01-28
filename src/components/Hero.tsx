@@ -68,46 +68,40 @@ const Hero = () => {
   ]
 
   return (
-    <section id="home" className="min-h-screen flex flex-col justify-center pt-24 pb-8">
+    <section id="home" className="flex min-h-screen flex-col justify-center pb-8 pt-24">
       {/* Left-aligned content in centered container */}
       <div className="w-full px-6 md:px-9">
-        <div className="max-w-[510px] mx-auto">
+        <div className="mx-auto max-w-[510px]">
           {/* Profile Image */}
           <div className="mb-6">
-            <div className="w-[100px] h-[100px] rounded-full overflow-hidden">
-              <img
-                src="/dp.avif"
-                alt="Profile"
-                className="w-full h-full object-cover"
-              />
+            <div className="h-[100px] w-[100px] overflow-hidden rounded-full">
+              <img src="/dp.avif" alt="Profile" className="h-full w-full object-cover" />
             </div>
           </div>
 
           {/* Headline */}
-          <h1 className="text-[28px] md:text-[36px] lg:text-[42px] font-semibold text-dark mb-5 leading-[1.15]">
-            Hey, I'm Sidharth Suresh.
+          <h1 className="mb-5 text-[28px] font-semibold leading-[1.15] text-dark md:text-[36px] lg:text-[42px]">
+            Hey, I'm Sidharth 👋
             <br />
             Innovator & Product Manager
           </h1>
 
           {/* Description */}
-          <p className="text-base md:text-lg text-dark-light mb-8 leading-relaxed">
-            Engineer by training. Product leader by practice.
-            Building AI platforms that scale, earn trust, and move the needle.
+          <p className="mb-8 text-base leading-relaxed text-dark-light md:text-lg">
+            Engineer by training. Product leader by practice. Building AI platforms that scale, earn
+            trust, and move the needle.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
+          <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center">
             <a
               href="#contact"
-              className="px-6 py-3.5 bg-dark text-white rounded-xl hover:bg-dark/90 transition-all duration-200 font-medium text-sm"
+              className="rounded-xl bg-dark px-6 py-3.5 text-sm font-medium text-white transition-all duration-200 hover:bg-dark/90"
             >
-             Contact Me
+              Contact Me
             </a>
-            <a
-              className="px-6 py-3.5 bg-[#e8f5e9] text-[#2e7d32] rounded-2xl font-medium text-sm flex items-center gap-2"
-            >
-              <span className="w-2 h-2 bg-[#4caf50] rounded-full" />
+            <a className="flex items-center gap-2 rounded-2xl bg-[#e8f5e9] px-6 py-3.5 text-sm font-medium text-[#2e7d32]">
+              <span className="h-2 w-2 rounded-full bg-[#4caf50]" />
               Available for new opportunities
             </a>
           </div>
@@ -116,32 +110,29 @@ const Hero = () => {
 
       {/* Project Previews Carousel - Auto-scrolling, breaks out of container */}
       <div
-        className="mt-16 overflow-hidden w-screen relative left-1/2 -translate-x-1/2"
+        className="relative left-1/2 mt-16 w-screen -translate-x-1/2 overflow-hidden"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
         <div ref={scrollRef} className="flex gap-6">
           {/* Duplicate items for infinite scroll effect */}
           {[...projectPreviews, ...projectPreviews].map((project, index) => (
-            <div
-              key={index}
-              className="flex-shrink-0 w-[340px] md:w-[480px]"
-            >
+            <div key={index} className="w-[340px] flex-shrink-0 md:w-[480px]">
               {/* Tablet Mockup - Outer frame with pinholes */}
-              <div className="bg-[#e8e8e8] rounded-[20px] p-5 shadow-sm relative">
+              <div className="relative rounded-[20px] bg-[#e8e8e8] p-5 shadow-sm">
                 {/* Corner pinholes on outer frame */}
-                <div className="absolute top-2.5 left-2.5 w-[6px] h-[6px] bg-[#c8c8c8] rounded-full" />
-                <div className="absolute top-2.5 right-2.5 w-[6px] h-[6px] bg-[#c8c8c8] rounded-full" />
-                <div className="absolute bottom-2.5 left-2.5 w-[6px] h-[6px] bg-[#c8c8c8] rounded-full" />
-                <div className="absolute bottom-2.5 right-2.5 w-[6px] h-[6px] bg-[#c8c8c8] rounded-full" />
+                <div className="absolute left-2.5 top-2.5 h-[6px] w-[6px] rounded-full bg-[#c8c8c8]" />
+                <div className="absolute right-2.5 top-2.5 h-[6px] w-[6px] rounded-full bg-[#c8c8c8]" />
+                <div className="absolute bottom-2.5 left-2.5 h-[6px] w-[6px] rounded-full bg-[#c8c8c8]" />
+                <div className="absolute bottom-2.5 right-2.5 h-[6px] w-[6px] rounded-full bg-[#c8c8c8]" />
                 {/* Inner bezel */}
-                <div className="bg-[#d4d4d4] rounded-[14px] p-2">
+                <div className="rounded-[14px] bg-[#d4d4d4] p-2">
                   {/* Screen */}
-                  <div className="rounded-[10px] overflow-hidden">
+                  <div className="overflow-hidden rounded-[10px]">
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-[220px] md:h-[280px] object-cover"
+                      className="h-[220px] w-full object-cover md:h-[280px]"
                     />
                   </div>
                 </div>

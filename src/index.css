@@ -10,7 +10,7 @@
   }
 
   body {
-    @apply bg-white text-dark font-sans antialiased;
+    @apply bg-white font-sans text-dark antialiased;
   }
 
   html {
@@ -26,5 +26,4 @@
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
-
 }

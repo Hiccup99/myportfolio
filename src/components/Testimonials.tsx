@@ -53,31 +53,32 @@ const Testimonials = () => {
   const testimonials = [
     {
       quote:
-        "I’ve had the privilege of knowing Sidharth and can confidently say he is one of those rare leaders who combines deep product thinking with a true builder’s mindset. As a founding-member-type leader, Sidharth consistently takes ownership beyond his mandate—whether it was launching entirely new product verticals, shaping strategy, or rolling up his sleeves to solve hard execution problems. He has an exceptional ability to connect customer insight, business outcomes, and technical feasibility, and then drive teams with clarity and conviction.",
+        'I’ve had the privilege of knowing Sidharth and can confidently say he is one of those rare leaders who combines deep product thinking with a true builder’s mindset. As a founding-member-type leader, Sidharth consistently takes ownership beyond his mandate—whether it was launching entirely new product verticals, shaping strategy, or rolling up his sleeves to solve hard execution problems. He has an exceptional ability to connect customer insight, business outcomes, and technical feasibility, and then drive teams with clarity and conviction.',
       name: 'Siddharth Sachar',
-      role: 'Founder\'s Office',
+      role: "Founder's Office",
       avatar: '/testimonial-faces/sachar.avif',
     },
     {
       quote:
-        "Sidharth is one of the most diligent and focused product managers I have worked with. He is superb at execution and rallying the team. I had a wonderful time with him during his growth journey at Metadome.",
+        'Sidharth is one of the most diligent and focused product managers I have worked with. He is superb at execution and rallying the team. I had a wonderful time with him during his growth journey at Metadome.',
       name: 'Kanav Singla',
       role: 'CEO',
       avatar: '/testimonial-faces/kanav.avif',
     },
     {
       quote:
-        "Sidharth is the ideal counterpart for any Engineering Manager. We worked together for four years, transitioning from individual contributors to leadership roles. We worked together on Autodome (Immersive Auto-sales experiences). His sense of ownership was unmatched; he fights for the product’s success as if it were his own, ensuring execution no matter the obstacles. He had then seamlessly transitioned this intensity to his work on an AI-powered Virtual Sales Assistant. He is a leader who takes absolute accountability and delivers results.",
+        'Sidharth is the ideal counterpart for any Engineering Manager. We worked together for four years, transitioning from individual contributors to leadership roles. We worked together on Autodome (Immersive Auto-sales experiences). His sense of ownership was unmatched; he fights for the product’s success as if it were his own, ensuring execution no matter the obstacles. He had then seamlessly transitioned this intensity to his work on an AI-powered Virtual Sales Assistant. He is a leader who takes absolute accountability and delivers results.',
       name: 'Ashish Dasari',
       role: 'Engineer Manager',
       avatar: '/testimonial-faces/ashish.avif',
     },
     {
       quote:
-        "Sidharth brings deep experience in building products from zero to one, with a strong focus on scale and long term impact. What stands out most is his analytical approach combined with a friendly, approachable nature and a strong sense of urgency. This balance helps the entire team stay motivated, aligned, and consistently operate at their highest capacity. On a personal level, his guidance played a key role in shaping my career direction. His natural instinct for problem identification, validation, and structured problem solving is exceptional",
+        'Sidharth brings deep experience in building products from zero to one, with a strong focus on scale and long term impact. What stands out most is his analytical approach combined with a friendly, approachable nature and a strong sense of urgency. This balance helps the entire team stay motivated, aligned, and consistently operate at their highest capacity. On a personal level, his guidance played a key role in shaping my career direction. His natural instinct for problem identification, validation, and structured problem solving is exceptional',
       name: 'Ashwani Kottapalli',
       role: 'Building @ EF',
-      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face',
+      avatar:
+        'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face',
     },
   ]
 
@@ -86,23 +87,21 @@ const Testimonials = () => {
       <div
         ref={ref}
         className={`transition-all duration-1000 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}
       >
         {/* Section Title */}
-        <div className="text-center mb-10 px-6 md:px-9">
-          <div className="flex items-center justify-center gap-2 text-gray-300 mb-2">
+        <div className="mb-10 px-6 text-center md:px-9">
+          <div className="mb-2 flex items-center justify-center gap-2 text-gray-300">
             <span>•</span>
-            <h2 className="text-2xl md:text-3xl font-semibold text-dark">
-              Testimonials
-            </h2>
+            <h2 className="text-2xl font-semibold text-dark md:text-3xl">Testimonials</h2>
             <span>•</span>
           </div>
         </div>
 
         {/* Testimonials Scroll - Breaks out of container */}
         <div
-          className="overflow-hidden w-screen relative left-1/2 -translate-x-1/2"
+          className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
@@ -110,20 +109,18 @@ const Testimonials = () => {
             {[...testimonials, ...testimonials].map((testimonial, index) => (
               <div
                 key={index}
-                className="min-w-[320px] max-w-[350px] bg-white border border-gray-200 rounded-xl p-6 snap-start flex-shrink-0"
+                className="min-w-[320px] max-w-[350px] flex-shrink-0 snap-start rounded-xl border border-gray-200 bg-white p-6"
               >
-                <p className="text-dark-light text-sm leading-relaxed mb-6">
-                  {testimonial.quote}
-                </p>
+                <p className="mb-6 text-sm leading-relaxed text-dark-light">{testimonial.quote}</p>
 
                 <div className="flex items-center gap-3">
                   <img
                     src={testimonial.avatar}
                     alt={testimonial.name}
-                    className="w-10 h-10 rounded-full object-cover grayscale"
+                    className="h-10 w-10 rounded-full object-cover grayscale"
                   />
                   <div>
-                    <p className="font-medium text-dark text-sm">{testimonial.name}</p>
+                    <p className="text-sm font-medium text-dark">{testimonial.name}</p>
                     <p className="text-xs text-secondary">{testimonial.role}</p>
                   </div>
                 </div>
