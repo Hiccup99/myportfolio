@@ -3,12 +3,19 @@ import { useEffect, useRef, useState } from 'react'
 const Hero = () => {
   const scrollRef = useRef<HTMLDivElement>(null)
   const [isHovered, setIsHovered] = useState(false)
+  const [isLoaded, setIsLoaded] = useState(false)
   const positionRef = useRef(0)
   const speedRef = useRef(1) // pixels per frame
   const targetSpeedRef = useRef(1)
 
   const NORMAL_SPEED = 1.5
   const SLOW_SPEED = 0.5
+
+  // Trigger load animation after mount
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoaded(true), 100)
+    return () => clearTimeout(timer)
+  }, [])
 
   useEffect(() => {
     targetSpeedRef.current = isHovered ? SLOW_SPEED : NORMAL_SPEED
@@ -69,35 +76,54 @@ const Hero = () => {
       <div className="w-full px-6 md:px-9">
         <div className="mx-auto max-w-[510px]">
           {/* Profile Image */}
-          <div className="mb-6">
-            <div className="h-[100px] w-[100px] overflow-hidden rounded-full">
-              <img src="/dp.avif" alt="Profile" className="h-full w-full object-cover" />
+          <div
+            className={`mb-6 transition-all duration-700 ${
+              isLoaded ? 'translate-y-0 scale-100 opacity-100' : 'translate-y-4 scale-95 opacity-0'
+            }`}
+          >
+            <div className="h-[100px] w-[100px] overflow-hidden rounded-full transition-transform duration-300 hover:scale-105">
+              <img src="/dp.avif" alt="Profile" className="h-full w-full object-cover grayscale" />
             </div>
           </div>
 
           {/* Headline */}
-          <h1 className="mb-5 text-[28px] font-semibold leading-tight text-text-primary md:text-[36px] lg:text-[42px]">
+          <h1
+            className={`text-text-primary mb-5 text-[28px] font-semibold leading-tight transition-all duration-700 md:text-[36px] lg:text-[42px] ${
+              isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+            }`}
+            style={{ transitionDelay: '150ms' }}
+          >
             Hey, I'm Sidharth 👋
             <br />
             Innovator & Product Manager
           </h1>
 
           {/* Description */}
-          <p className="mb-8 text-base leading-relaxed text-text-secondary md:text-lg">
+          <p
+            className={`text-text-secondary mb-8 text-base leading-relaxed transition-all duration-700 md:text-lg ${
+              isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+            }`}
+            style={{ transitionDelay: '300ms' }}
+          >
             Engineer by training. Product leader by practice. Building AI platforms that scale, earn
             trust, and move the needle.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center">
+          <div
+            className={`flex flex-col items-start gap-3 transition-all duration-700 sm:flex-row sm:items-center ${
+              isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+            }`}
+            style={{ transitionDelay: '450ms' }}
+          >
             <a
               href="#contact"
-              className="rounded-xl bg-btn-primary-bg px-6 py-3.5 text-sm font-medium text-btn-primary-text transition-all duration-normal hover:bg-btn-primary-bg-hover"
+              className="bg-btn-primary-bg text-btn-primary-text duration-normal hover:bg-btn-primary-bg-hover rounded-xl px-6 py-3.5 text-sm font-medium transition-all"
             >
               Contact Me
             </a>
-            <a className="flex items-center gap-2 rounded-2xl bg-badge-available-bg px-6 py-3.5 text-sm font-medium text-badge-available-text">
-              <span className="h-2 w-2 rounded-full bg-badge-available-dot" />
+            <a className="bg-badge-available-bg text-badge-available-text flex items-center gap-2 rounded-2xl px-6 py-3.5 text-sm font-medium">
+              <span className="bg-badge-available-dot h-2 w-2 rounded-full" />
               Available for new opportunities
             </a>
           </div>
@@ -106,29 +132,35 @@ const Hero = () => {
 
       {/* Project Previews Carousel - Auto-scrolling, breaks out of container */}
       <div
-        className="relative left-1/2 mt-16 w-screen -translate-x-1/2 overflow-hidden"
+        className={`relative left-1/2 mt-16 w-screen -translate-x-1/2 overflow-hidden transition-all duration-700 ${
+          isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+        }`}
+        style={{ transitionDelay: '600ms' }}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
+        {/* Edge fade gradients */}
+        <div className="from-bg-primary pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r to-transparent md:w-16" />
+        <div className="from-bg-primary pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l to-transparent md:w-16" />
         <div ref={scrollRef} className="flex gap-6">
           {/* Duplicate items for infinite scroll effect */}
           {[...projectPreviews, ...projectPreviews].map((project, index) => (
-            <div key={index} className="w-[340px] flex-shrink-0 md:w-[480px]">
+            <div key={index} className="group w-[340px] flex-shrink-0 md:w-[480px]">
               {/* Tablet Mockup - Outer frame with pinholes */}
-              <div className="relative rounded-[20px] bg-mockup-frame p-5 shadow-sm">
+              <div className="bg-mockup-frame relative rounded-[20px] p-5 shadow-sm transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-md">
                 {/* Corner pinholes on outer frame */}
-                <div className="absolute left-2.5 top-2.5 h-[6px] w-[6px] rounded-full bg-mockup-accent" />
-                <div className="absolute right-2.5 top-2.5 h-[6px] w-[6px] rounded-full bg-mockup-accent" />
-                <div className="absolute bottom-2.5 left-2.5 h-[6px] w-[6px] rounded-full bg-mockup-accent" />
-                <div className="absolute bottom-2.5 right-2.5 h-[6px] w-[6px] rounded-full bg-mockup-accent" />
+                <div className="bg-mockup-accent absolute left-2.5 top-2.5 h-[6px] w-[6px] rounded-full" />
+                <div className="bg-mockup-accent absolute right-2.5 top-2.5 h-[6px] w-[6px] rounded-full" />
+                <div className="bg-mockup-accent absolute bottom-2.5 left-2.5 h-[6px] w-[6px] rounded-full" />
+                <div className="bg-mockup-accent absolute bottom-2.5 right-2.5 h-[6px] w-[6px] rounded-full" />
                 {/* Inner bezel */}
-                <div className="rounded-custom bg-mockup-bezel p-2">
+                <div className="bg-mockup-bezel rounded-custom p-2">
                   {/* Screen */}
                   <div className="overflow-hidden rounded-[10px]">
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="h-[220px] w-full object-cover md:h-[280px]"
+                      className="h-[220px] w-full object-cover transition-transform duration-500 group-hover:scale-105 md:h-[280px]"
                     />
                   </div>
                 </div>

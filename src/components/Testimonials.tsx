@@ -105,11 +105,14 @@ const Testimonials = () => {
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
+          {/* Edge fade gradients */}
+          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-bg-primary to-transparent md:w-32" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-bg-primary to-transparent md:w-32" />
           <div ref={scrollRef} className="flex gap-5">
             {[...testimonials, ...testimonials].map((testimonial, index) => (
               <div
                 key={index}
-                className="border-card-border bg-card-bg min-w-[320px] max-w-[350px] flex-shrink-0 snap-start rounded-xl border p-6"
+                className="border-card-border bg-card-bg min-w-[320px] max-w-[350px] flex-shrink-0 snap-start rounded-xl border p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
               >
                 <p className="text-text-secondary mb-6 text-sm leading-relaxed">
                   {testimonial.quote}

@@ -24,7 +24,7 @@ const Projects = () => {
           {projects.map((project) => (
             <div
               key={project.id}
-              className="group rounded-[28px] border border-card-border bg-card-bg shadow-sm"
+              className="group rounded-[28px] border border-card-border bg-card-bg shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
             >
               {/* Device Mockup Container */}
               <div className="p-5">
@@ -34,7 +34,7 @@ const Projects = () => {
                     <img
                       src={project.image}
                       alt={project.title}
-                      className={`aspect-[16/10] w-full object-${project.imageFit}`}
+                      className={`aspect-[16/10] w-full object-${project.imageFit} transition-transform duration-500 group-hover:scale-105`}
                     />
                   </div>
                 </div>
@@ -73,7 +73,7 @@ const Projects = () => {
                     href={project.caseStudyUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex h-10 w-10 items-center justify-center rounded-full border border-card-border text-text-secondary transition-colors hover:bg-bg-secondary hover:text-text-primary"
+                    className="flex h-10 w-10 items-center justify-center rounded-full border border-card-border text-text-secondary transition-all duration-200 hover:scale-110 hover:bg-bg-secondary hover:text-text-primary"
                     title="Case study Website"
                   >
                     <svg
@@ -97,7 +97,7 @@ const Projects = () => {
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex h-10 w-10 items-center justify-center rounded-full border border-card-border text-text-secondary transition-colors hover:bg-bg-secondary hover:text-text-primary"
+                      className="flex h-10 w-10 items-center justify-center rounded-full border border-card-border text-text-secondary transition-all duration-200 hover:scale-110 hover:bg-bg-secondary hover:text-text-primary"
                       title="Live Website"
                     >
                       <svg
@@ -123,7 +123,7 @@ const Projects = () => {
                       href={project.impactUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex h-10 w-10 items-center justify-center rounded-full border border-card-border text-text-secondary transition-colors hover:bg-bg-secondary hover:text-text-primary"
+                      className="flex h-10 w-10 items-center justify-center rounded-full border border-card-border text-text-secondary transition-all duration-200 hover:scale-110 hover:bg-bg-secondary hover:text-text-primary"
                       title="Impact"
                     >
                       <svg

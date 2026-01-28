@@ -43,14 +43,14 @@ const Services = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="cursor-pointer rounded-2xl border border-card-border p-5 transition-colors hover:border-card-border-hover"
+              className="group cursor-pointer rounded-2xl border border-card-border p-5 transition-all duration-300 hover:-translate-y-1 hover:border-card-border-hover hover:shadow-md"
             >
               {/* Stacked mockup images */}
               <div className="relative mb-4 h-[80px]">
-                <div className="absolute left-0 top-2 h-[70px] w-[60px] -rotate-6 overflow-hidden rounded-lg bg-card-bg shadow-md">
+                <div className="absolute left-0 top-2 h-[70px] w-[60px] -rotate-6 overflow-hidden rounded-lg bg-card-bg shadow-md transition-transform duration-300 group-hover:-rotate-12">
                   <img src={service.image} alt="" className="h-full w-full object-cover" />
                 </div>
-                <div className="absolute left-6 top-0 h-[70px] w-[60px] rotate-6 overflow-hidden rounded-lg bg-card-bg shadow-md">
+                <div className="absolute left-6 top-0 h-[70px] w-[60px] rotate-6 overflow-hidden rounded-lg bg-card-bg shadow-md transition-transform duration-300 group-hover:rotate-12">
                   <img src={service.image} alt="" className="h-full w-full object-cover" />
                 </div>
               </div>

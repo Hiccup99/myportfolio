@@ -28,7 +28,12 @@ const About = () => {
         {/* Polaroid Photos - Overlapping */}
         <div className="relative mt-6 flex h-[280px] items-center justify-center">
           {/* Photo 1 - Behind, tilted left */}
-          <div className="absolute z-10 -translate-x-8 -rotate-6 bg-polaroid-bg p-2 shadow-lg">
+          <div
+            className={`absolute z-10 -translate-x-8 -rotate-6 bg-polaroid-bg p-2 shadow-lg transition-all duration-700 hover:scale-105 hover:shadow-xl ${
+              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'
+            }`}
+            style={{ transitionDelay: '200ms' }}
+          >
             <img
               src="about/interstellar.avif"
               alt="Travel photo"
@@ -38,7 +43,12 @@ const About = () => {
           </div>
 
           {/* Photo 2 - Front, tilted right */}
-          <div className="z-9 absolute translate-x-20 translate-y-20 rotate-6 bg-polaroid-bg p-2 shadow-lg">
+          <div
+            className={`z-9 absolute translate-x-20 rotate-6 bg-polaroid-bg p-2 shadow-lg transition-all duration-700 hover:scale-105 hover:shadow-xl ${
+              isVisible ? 'translate-y-20 opacity-100' : 'translate-y-32 opacity-0'
+            }`}
+            style={{ transitionDelay: '400ms' }}
+          >
             <img
               src="about/paint.avif"
               alt="Japan photo"

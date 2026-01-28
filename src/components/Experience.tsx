@@ -40,14 +40,20 @@ const Experience = () => {
         {/* Experience List */}
         <div className="space-y-5">
           {experiences.map((exp, index) => (
-            <div key={index}>
+            <div
+              key={index}
+              className={`transition-all duration-500 ${
+                isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+              }`}
+              style={{ transitionDelay: isVisible ? `${index * 100}ms` : '0ms' }}
+            >
               {/* Period */}
               <p className="mb-2 text-sm text-text-muted">{exp.period}</p>
 
               {/* Role and Company */}
               <div className="flex flex-wrap items-center gap-2">
                 <span className="text-base text-text-primary">{exp.role} at</span>
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-card-border bg-card-bg px-3 py-1.5 text-sm font-medium">
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-card-border bg-card-bg px-3 py-1.5 text-sm font-medium transition-transform duration-200 hover:scale-105">
                   {exp.logo && <span>{exp.logo}</span>}
                   {exp.company}
                 </span>
