@@ -16,10 +16,10 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: '3d-product-visualizers',
-    title: '3D Product Visualizers',
+    id: 'autodome',
+    title: 'Autodome',
     description:
-      'Discover is a 3D Product Visualisation suite that enables brands to offer highly engaging and realistic car buying experience to their customers',
+      'Autodome is a 3D Product Visualisation suite that enables brands to offer highly engaging and realistic car buying experience to their customers',
     image: '/projects/stellantis/thumbnail.avif',
     imageFit: 'cover',
     link: '/project/3d-product-visualizers',
