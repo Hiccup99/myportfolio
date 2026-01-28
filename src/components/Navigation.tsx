@@ -1,7 +1,31 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const [theme, setTheme] = useState<'default' | 'premium'>('default')
+
+  // Initialize theme from localStorage on mount
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme') as 'default' | 'premium' | null
+    if (savedTheme) {
+      setTheme(savedTheme)
+      if (savedTheme === 'premium') {
+        document.documentElement.classList.add('premium')
+      }
+    }
+  }, [])
+
+  const toggleTheme = () => {
+    const newTheme = theme === 'default' ? 'premium' : 'default'
+    setTheme(newTheme)
+    localStorage.setItem('theme', newTheme)
+
+    if (newTheme === 'premium') {
+      document.documentElement.classList.add('premium')
+    } else {
+      document.documentElement.classList.remove('premium')
+    }
+  }
 
   const navLinks = [
     {
@@ -92,11 +116,11 @@ const Navigation = () => {
     <>
       {/* Desktop Navigation */}
       <nav className="fixed left-1/2 top-6 z-50 hidden -translate-x-1/2 md:block">
-        <div className="flex items-center gap-1 rounded-full border border-gray-200 bg-white px-1.5 py-1.5 shadow-sm">
+        <div className="flex items-center gap-1 rounded-full border border-nav-border bg-nav-bg px-1.5 py-1.5 shadow-sm">
           <div className="group relative">
             <a
               href="#home"
-              className="flex h-9 w-9 items-center justify-center rounded-full transition-colors hover:bg-gray-100"
+              className="flex h-9 w-9 items-center justify-center rounded-full transition-colors hover:bg-nav-hover"
               aria-label="Home"
             >
               <svg
@@ -113,18 +137,18 @@ const Navigation = () => {
                 />
               </svg>
             </a>
-            <span className="pointer-events-none absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-dark px-2 py-1 text-xs text-white opacity-0 transition-opacity group-hover:opacity-100">
+            <span className="pointer-events-none absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-tooltip-bg px-2 py-1 text-xs text-tooltip-text opacity-0 transition-opacity group-hover:opacity-100">
               Home
             </span>
           </div>
 
-          <div className="mx-0.5 h-5 w-px bg-gray-200" />
+          <div className="mx-0.5 h-5 w-px bg-border" />
           <div className="group relative">
             <a
               href="https://www.linkedin.com/in/sidharthsuresh/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex h-9 w-9 items-center justify-center rounded-full transition-colors hover:bg-gray-100"
+              className="flex h-9 w-9 items-center justify-center rounded-full transition-colors hover:bg-nav-hover"
               aria-label="LinkedIn"
             >
               <svg
@@ -145,7 +169,7 @@ const Navigation = () => {
                 <path d="M7.1 12.8V9.1c0-.7.1-1.1.3-1.5.3-.6 1-1.2 2-1.2 1.5 0 2.1 1.1 2.1 2.7v3.7" />
               </svg>
             </a>
-            <span className="pointer-events-none absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-dark px-2 py-1 text-xs text-white opacity-0 transition-opacity group-hover:opacity-100">
+            <span className="pointer-events-none absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-tooltip-bg px-2 py-1 text-xs text-tooltip-text opacity-0 transition-opacity group-hover:opacity-100">
               LinkedIn
             </span>
           </div>
@@ -155,7 +179,7 @@ const Navigation = () => {
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex h-9 w-9 items-center justify-center rounded-full transition-colors hover:bg-gray-100"
+              className="flex h-9 w-9 items-center justify-center rounded-full transition-colors hover:bg-nav-hover"
               aria-label="Mail"
             >
               <svg
@@ -172,7 +196,7 @@ const Navigation = () => {
                 />
               </svg>
             </a>
-            <span className="pointer-events-none absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-dark px-2 py-1 text-xs text-white opacity-0 transition-opacity group-hover:opacity-100">
+            <span className="pointer-events-none absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-tooltip-bg px-2 py-1 text-xs text-tooltip-text opacity-0 transition-opacity group-hover:opacity-100">
               Mail
             </span>
           </div>
@@ -181,7 +205,7 @@ const Navigation = () => {
             <a
               href="https://drive.google.com/file/d/1XtIJRHrolPf7c8zANag-vVwOvLQFkziW/view?usp=sharing"
               target="_blank"
-              className="flex h-9 w-9 items-center justify-center rounded-full transition-colors hover:bg-gray-100"
+              className="flex h-9 w-9 items-center justify-center rounded-full transition-colors hover:bg-nav-hover"
               aria-label="Resume"
             >
               <svg
@@ -198,20 +222,20 @@ const Navigation = () => {
                 />
               </svg>
             </a>
-            <span className="pointer-events-none absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-dark px-2 py-1 text-xs text-white opacity-0 transition-opacity group-hover:opacity-100">
+            <span className="pointer-events-none absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-tooltip-bg px-2 py-1 text-xs text-tooltip-text opacity-0 transition-opacity group-hover:opacity-100">
               Resume
             </span>
           </div>
 
-          <div className="mx-0.5 h-5 w-px bg-gray-200" />
+          <div className="mx-0.5 h-5 w-px bg-border" />
 
           <a
             href="#contact"
-            className="group flex items-center gap-0 rounded-full bg-dark px-4 py-2 text-sm font-medium text-white transition-all duration-200 hover:pr-3"
+            className="group flex items-center gap-0 rounded-full bg-btn-primary-bg px-4 py-2 text-sm font-medium text-btn-primary-text transition-all duration-normal hover:bg-btn-primary-bg-hover hover:pr-3"
           >
             <span>Get in Touch</span>
             <svg
-              className="h-4 w-0 opacity-0 transition-all duration-200 group-hover:ml-1 group-hover:w-4 group-hover:opacity-100"
+              className="h-4 w-0 opacity-0 transition-all duration-normal group-hover:ml-1 group-hover:w-4 group-hover:opacity-100"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -222,11 +246,27 @@ const Navigation = () => {
         </div>
       </nav>
 
+      {/* Theme Toggle - Desktop */}
+      <button
+        onClick={toggleTheme}
+        className="fixed right-6 top-6 z-50 hidden items-center gap-2 rounded-full border border-nav-border bg-nav-bg px-3 py-2 text-xs font-medium text-text-secondary shadow-sm transition-colors hover:bg-nav-hover md:flex"
+        aria-label="Toggle theme"
+      >
+        <span className={theme === 'premium' ? 'text-text-primary' : ''}>Premium</span>
+        <div className="relative h-5 w-9 rounded-full bg-bg-tertiary">
+          <div
+            className={`absolute top-0.5 h-4 w-4 rounded-full bg-btn-primary-bg transition-transform duration-normal ${
+              theme === 'premium' ? 'translate-x-4' : 'translate-x-0.5'
+            }`}
+          />
+        </div>
+      </button>
+
       {/* Mobile Navigation */}
       <nav className="fixed right-4 top-4 z-50 md:hidden">
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="flex h-11 w-11 items-center justify-center rounded-full border border-gray-200 bg-white shadow-sm"
+          className="flex h-11 w-11 items-center justify-center rounded-full border border-nav-border bg-nav-bg shadow-sm"
           aria-label="Toggle menu"
         >
           {isOpen ? (
@@ -258,7 +298,7 @@ const Navigation = () => {
 
         {/* Mobile Menu Dropdown */}
         {isOpen && (
-          <div className="animate-in fade-in slide-in-from-top-2 absolute right-0 top-14 w-48 rounded-2xl border border-gray-200 bg-white py-2 shadow-lg duration-200">
+          <div className="animate-in fade-in slide-in-from-top-2 absolute right-0 top-14 w-48 rounded-2xl border border-nav-border bg-nav-bg py-2 shadow-lg duration-normal">
             {navLinks.map((link) => (
               <a
                 key={link.label}
@@ -266,7 +306,7 @@ const Navigation = () => {
                 target={link.external ? '_blank' : undefined}
                 rel={link.external ? 'noopener noreferrer' : undefined}
                 onClick={() => setIsOpen(false)}
-                className="flex items-center gap-3 px-4 py-3 text-sm text-dark transition-colors hover:bg-gray-50"
+                className="flex items-center gap-3 px-4 py-3 text-sm text-text-primary transition-colors hover:bg-bg-secondary"
               >
                 <span className="flex h-5 w-5 shrink-0 items-center justify-center">
                   {link.icon}
@@ -274,14 +314,29 @@ const Navigation = () => {
                 {link.label}
               </a>
             ))}
-            <div className="mx-3 my-2 border-t border-gray-100" />
+            <div className="mx-3 my-2 border-t border-border-subtle" />
             <a
               href="#contact"
               onClick={() => setIsOpen(false)}
-              className="mx-3 flex items-center justify-center gap-3 rounded-full bg-dark px-4 py-2.5 text-sm font-medium text-white"
+              className="mx-3 flex items-center justify-center gap-3 rounded-full bg-btn-primary-bg px-4 py-2.5 text-sm font-medium text-btn-primary-text"
             >
               Get in Touch
             </a>
+            <div className="mx-3 my-2 border-t border-border-subtle" />
+            {/* Theme Toggle - Mobile */}
+            <button
+              onClick={toggleTheme}
+              className="mx-3 flex items-center justify-between rounded-lg px-1 py-2 text-sm"
+            >
+              <span className={theme === 'premium' ? 'text-text-primary' : 'text-text-secondary'}>Premium</span>
+              <div className="relative h-5 w-9 rounded-full bg-bg-tertiary">
+                <div
+                  className={`absolute top-0.5 h-4 w-4 rounded-full bg-btn-primary-bg transition-transform duration-normal ${
+                    theme === 'premium' ? 'translate-x-4' : 'translate-x-0.5'
+                  }`}
+                />
+              </div>
+            </button>
           </div>
         )}
       </nav>

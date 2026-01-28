@@ -36,8 +36,8 @@ export const projects: Project[] = [
       'Product Strategy & Roadmap',
       'End-to-End Product Ownership',
       'Client & Stakeholder Leadership',
-      '0->1 Product Execution',
       'Cross-Functional Leadership',
+      '0->1->10 Product Execution',
     ],
   },
   {
@@ -60,8 +60,8 @@ export const projects: Project[] = [
       'Product Strategy & Roadmap',
       'End-to-End Product Ownership',
       'Client & Stakeholder Leadership',
+      '0->1 Product Execution',
       'Cross-Functional Leadership',
-      '0->1->10 Product Execution',
     ],
   },
 ]

@@ -26,14 +26,16 @@ const Services = () => {
     <section className="px-6 py-[70px] md:px-9">
       <div
         ref={ref}
-        className={`mx-auto max-w-[500px] transition-all duration-1000 ${
+        className={`mx-auto max-w-[500px] transition-all duration-slower ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}
       >
         {/* Section Title */}
         <div className="mb-10 text-center">
-          <h2 className="mb-3 text-2xl font-semibold text-dark md:text-3xl">How Can I Help?</h2>
-          <p className="text-dark-light">Let's turn your vision into something amazing.</p>
+          <h2 className="mb-3 text-2xl font-semibold text-text-primary md:text-3xl">
+            How Can I Help?
+          </h2>
+          <p className="text-text-secondary">Let's turn your vision into something amazing.</p>
         </div>
 
         {/* Services Grid */}
@@ -41,18 +43,18 @@ const Services = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="cursor-pointer rounded-2xl border border-gray-200 p-5 transition-colors hover:border-gray-300"
+              className="cursor-pointer rounded-2xl border border-card-border p-5 transition-colors hover:border-card-border-hover"
             >
               {/* Stacked mockup images */}
               <div className="relative mb-4 h-[80px]">
-                <div className="absolute left-0 top-2 h-[70px] w-[60px] -rotate-6 overflow-hidden rounded-lg bg-white shadow-md">
+                <div className="absolute left-0 top-2 h-[70px] w-[60px] -rotate-6 overflow-hidden rounded-lg bg-card-bg shadow-md">
                   <img src={service.image} alt="" className="h-full w-full object-cover" />
                 </div>
-                <div className="absolute left-6 top-0 h-[70px] w-[60px] rotate-6 overflow-hidden rounded-lg bg-white shadow-md">
+                <div className="absolute left-6 top-0 h-[70px] w-[60px] rotate-6 overflow-hidden rounded-lg bg-card-bg shadow-md">
                   <img src={service.image} alt="" className="h-full w-full object-cover" />
                 </div>
               </div>
-              <h3 className="text-base font-medium text-dark">{service.title}</h3>
+              <h3 className="text-base font-medium text-text-primary">{service.title}</h3>
             </div>
           ))}
         </div>

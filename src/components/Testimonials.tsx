@@ -53,7 +53,7 @@ const Testimonials = () => {
   const testimonials = [
     {
       quote:
-        'I’ve had the privilege of knowing Sidharth and can confidently say he is one of those rare leaders who combines deep product thinking with a true builder’s mindset. As a founding-member-type leader, Sidharth consistently takes ownership beyond his mandate—whether it was launching entirely new product verticals, shaping strategy, or rolling up his sleeves to solve hard execution problems. He has an exceptional ability to connect customer insight, business outcomes, and technical feasibility, and then drive teams with clarity and conviction.',
+        "I've had the privilege of knowing Sidharth and can confidently say he is one of those rare leaders who combines deep product thinking with a true builder's mindset. As a founding-member-type leader, Sidharth consistently takes ownership beyond his mandate—whether it was launching entirely new product verticals, shaping strategy, or rolling up his sleeves to solve hard execution problems. He has an exceptional ability to connect customer insight, business outcomes, and technical feasibility, and then drive teams with clarity and conviction.",
       name: 'Siddharth Sachar',
       role: "Founder's Office",
       avatar: '/testimonial-faces/sachar.avif',
@@ -67,7 +67,7 @@ const Testimonials = () => {
     },
     {
       quote:
-        'Sidharth is the ideal counterpart for any Engineering Manager. We worked together for four years, transitioning from individual contributors to leadership roles. We worked together on Autodome (Immersive Auto-sales experiences). His sense of ownership was unmatched; he fights for the product’s success as if it were his own, ensuring execution no matter the obstacles. He had then seamlessly transitioned this intensity to his work on an AI-powered Virtual Sales Assistant. He is a leader who takes absolute accountability and delivers results.',
+        "Sidharth is the ideal counterpart for any Engineering Manager. We worked together for four years, transitioning from individual contributors to leadership roles. We worked together on Autodome (Immersive Auto-sales experiences). His sense of ownership was unmatched; he fights for the product's success as if it were his own, ensuring execution no matter the obstacles. He had then seamlessly transitioned this intensity to his work on an AI-powered Virtual Sales Assistant. He is a leader who takes absolute accountability and delivers results.",
       name: 'Ashish Dasari',
       role: 'Engineer Manager',
       avatar: '/testimonial-faces/ashish.avif',
@@ -86,15 +86,15 @@ const Testimonials = () => {
     <section className="py-[70px]">
       <div
         ref={ref}
-        className={`transition-all duration-1000 ${
+        className={`duration-slower transition-all ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}
       >
         {/* Section Title */}
         <div className="mb-10 px-6 text-center md:px-9">
-          <div className="mb-2 flex items-center justify-center gap-2 text-gray-300">
+          <div className="text-border-strong mb-2 flex items-center justify-center gap-2">
             <span>•</span>
-            <h2 className="text-2xl font-semibold text-dark md:text-3xl">Testimonials</h2>
+            <h2 className="text-text-primary text-2xl font-semibold md:text-3xl">Testimonials</h2>
             <span>•</span>
           </div>
         </div>
@@ -109,9 +109,11 @@ const Testimonials = () => {
             {[...testimonials, ...testimonials].map((testimonial, index) => (
               <div
                 key={index}
-                className="min-w-[320px] max-w-[350px] flex-shrink-0 snap-start rounded-xl border border-gray-200 bg-white p-6"
+                className="border-card-border bg-card-bg min-w-[320px] max-w-[350px] flex-shrink-0 snap-start rounded-xl border p-6"
               >
-                <p className="mb-6 text-sm leading-relaxed text-dark-light">{testimonial.quote}</p>
+                <p className="text-text-secondary mb-6 text-sm leading-relaxed">
+                  {testimonial.quote}
+                </p>
 
                 <div className="flex items-center gap-3">
                   <img
@@ -120,8 +122,8 @@ const Testimonials = () => {
                     className="h-10 w-10 rounded-full object-cover grayscale"
                   />
                   <div>
-                    <p className="text-sm font-medium text-dark">{testimonial.name}</p>
-                    <p className="text-xs text-secondary">{testimonial.role}</p>
+                    <p className="text-text-primary text-sm font-medium">{testimonial.name}</p>
+                    <p className="text-text-muted text-xs">{testimonial.role}</p>
                   </div>
                 </div>
               </div>

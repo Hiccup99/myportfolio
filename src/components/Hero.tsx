@@ -76,14 +76,14 @@ const Hero = () => {
           </div>
 
           {/* Headline */}
-          <h1 className="mb-5 text-[28px] font-semibold leading-[1.15] text-dark md:text-[36px] lg:text-[42px]">
+          <h1 className="mb-5 text-[28px] font-semibold leading-tight text-text-primary md:text-[36px] lg:text-[42px]">
             Hey, I'm Sidharth 👋
             <br />
             Innovator & Product Manager
           </h1>
 
           {/* Description */}
-          <p className="mb-8 text-base leading-relaxed text-dark-light md:text-lg">
+          <p className="mb-8 text-base leading-relaxed text-text-secondary md:text-lg">
             Engineer by training. Product leader by practice. Building AI platforms that scale, earn
             trust, and move the needle.
           </p>
@@ -92,12 +92,12 @@ const Hero = () => {
           <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center">
             <a
               href="#contact"
-              className="rounded-xl bg-dark px-6 py-3.5 text-sm font-medium text-white transition-all duration-200 hover:bg-dark/90"
+              className="rounded-xl bg-btn-primary-bg px-6 py-3.5 text-sm font-medium text-btn-primary-text transition-all duration-normal hover:bg-btn-primary-bg-hover"
             >
               Contact Me
             </a>
-            <a className="flex items-center gap-2 rounded-2xl bg-[#e8f5e9] px-6 py-3.5 text-sm font-medium text-[#2e7d32]">
-              <span className="h-2 w-2 rounded-full bg-[#4caf50]" />
+            <a className="flex items-center gap-2 rounded-2xl bg-badge-available-bg px-6 py-3.5 text-sm font-medium text-badge-available-text">
+              <span className="h-2 w-2 rounded-full bg-badge-available-dot" />
               Available for new opportunities
             </a>
           </div>
@@ -115,14 +115,14 @@ const Hero = () => {
           {[...projectPreviews, ...projectPreviews].map((project, index) => (
             <div key={index} className="w-[340px] flex-shrink-0 md:w-[480px]">
               {/* Tablet Mockup - Outer frame with pinholes */}
-              <div className="relative rounded-[20px] bg-[#e8e8e8] p-5 shadow-sm">
+              <div className="relative rounded-[20px] bg-mockup-frame p-5 shadow-sm">
                 {/* Corner pinholes on outer frame */}
-                <div className="absolute left-2.5 top-2.5 h-[6px] w-[6px] rounded-full bg-[#c8c8c8]" />
-                <div className="absolute right-2.5 top-2.5 h-[6px] w-[6px] rounded-full bg-[#c8c8c8]" />
-                <div className="absolute bottom-2.5 left-2.5 h-[6px] w-[6px] rounded-full bg-[#c8c8c8]" />
-                <div className="absolute bottom-2.5 right-2.5 h-[6px] w-[6px] rounded-full bg-[#c8c8c8]" />
+                <div className="absolute left-2.5 top-2.5 h-[6px] w-[6px] rounded-full bg-mockup-accent" />
+                <div className="absolute right-2.5 top-2.5 h-[6px] w-[6px] rounded-full bg-mockup-accent" />
+                <div className="absolute bottom-2.5 left-2.5 h-[6px] w-[6px] rounded-full bg-mockup-accent" />
+                <div className="absolute bottom-2.5 right-2.5 h-[6px] w-[6px] rounded-full bg-mockup-accent" />
                 {/* Inner bezel */}
-                <div className="rounded-[14px] bg-[#d4d4d4] p-2">
+                <div className="rounded-custom bg-mockup-bezel p-2">
                   {/* Screen */}
                   <div className="overflow-hidden rounded-[10px]">
                     <img

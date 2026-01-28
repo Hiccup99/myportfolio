@@ -48,7 +48,7 @@ const Footer = () => {
     <footer className="px-6 py-10 md:px-9">
       <div className="mx-auto max-w-2xl text-center">
         {/* Copyright */}
-        <p className="mb-6 text-sm text-dark-light">
+        <p className="mb-6 text-sm text-text-secondary">
           Copyright &copy; {new Date().getFullYear()} Sidharth Suresh. All rights reserved.
         </p>
 
@@ -60,7 +60,7 @@ const Footer = () => {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-dark transition-colors hover:text-primary"
+              className="text-text-primary transition-colors hover:text-brand-primary"
               aria-label={link.name}
             >
               {link.icon}

@@ -9,12 +9,12 @@ const Projects = () => {
     <section id="projects" className="px-6 py-[70px] md:px-9">
       <div
         ref={ref}
-        className={`mx-auto max-w-[500px] transition-all duration-1000 ${
+        className={`mx-auto max-w-[500px] transition-all duration-slower ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}
       >
         <div className="mb-10 text-center">
-          <h2 className="text-2xl font-semibold text-dark md:text-3xl">
+          <h2 className="text-2xl font-semibold text-text-primary md:text-3xl">
             Here's What I've Been Up To.
           </h2>
         </div>
@@ -24,11 +24,11 @@ const Projects = () => {
           {projects.map((project) => (
             <div
               key={project.id}
-              className="group rounded-[28px] border border-gray-200 bg-white shadow-sm"
+              className="group rounded-[28px] border border-card-border bg-card-bg shadow-sm"
             >
               {/* Device Mockup Container */}
               <div className="p-5">
-                <div className="rounded-[16px] bg-[#f5f5f5] p-4">
+                <div className="rounded-[16px] bg-bg-secondary p-4">
                   {/* Screen */}
                   <div className="overflow-hidden rounded-[12px]">
                     <img
@@ -42,18 +42,27 @@ const Projects = () => {
 
               {/* Project Info */}
               <div className="px-5 pb-6">
-                <h3 className="mb-2 text-xl font-semibold text-dark">{project.title}</h3>
-                <p className="mb-5 text-sm leading-relaxed text-dark-light">
+                <h3 className="mb-2 text-xl font-semibold text-text-primary">{project.title}</h3>
+                <p className="mb-5 text-sm leading-relaxed text-text-secondary">
                   {project.description}
                 </p>
 
                 {/* My Role */}
                 {project.role && project.role.length > 0 && (
-                  <div className="mb-4 flex flex-wrap items-center gap-2">
-                    <span className="rounded-md bg-gray-100 px-2.5 py-1 text-xs font-semibold uppercase tracking-wide text-dark-light">
+                  <div className="mb-4">
+                    <span className="mb-2 block text-[10px] font-semibold uppercase tracking-wide text-text-muted">
                       My Role
                     </span>
-                    <span className="text-sm text-dark">{project.role.join(' · ')}</span>
+                    <div className="flex flex-wrap gap-1.5">
+                      {project.role.map((role, index) => (
+                        <span
+                          key={index}
+                          className="rounded-md border border-border bg-bg-secondary px-2 py-0.5 text-[12px] text-text-secondary"
+                        >
+                          {role}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 )}
 
@@ -64,7 +73,7 @@ const Projects = () => {
                     href={project.caseStudyUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 text-dark-light transition-colors hover:bg-gray-50 hover:text-dark"
+                    className="flex h-10 w-10 items-center justify-center rounded-full border border-card-border text-text-secondary transition-colors hover:bg-bg-secondary hover:text-text-primary"
                     title="Case study Website"
                   >
                     <svg
@@ -88,7 +97,7 @@ const Projects = () => {
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 text-dark-light transition-colors hover:bg-gray-50 hover:text-dark"
+                      className="flex h-10 w-10 items-center justify-center rounded-full border border-card-border text-text-secondary transition-colors hover:bg-bg-secondary hover:text-text-primary"
                       title="Live Website"
                     >
                       <svg
@@ -114,7 +123,7 @@ const Projects = () => {
                       href={project.impactUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 text-dark-light transition-colors hover:bg-gray-50 hover:text-dark"
+                      className="flex h-10 w-10 items-center justify-center rounded-full border border-card-border text-text-secondary transition-colors hover:bg-bg-secondary hover:text-text-primary"
                       title="Impact"
                     >
                       <svg
@@ -137,11 +146,11 @@ const Projects = () => {
                 {/* View Project Button */}
                 <Link
                   to={project.link}
-                  className="group/btn inline-flex items-center gap-2 rounded-full bg-gray-100 px-6 py-3 text-sm font-medium text-dark transition-all duration-200 hover:bg-gray-200"
+                  className="group/btn inline-flex items-center gap-2 rounded-full bg-btn-secondary-bg px-6 py-3 text-sm font-medium text-btn-secondary-text transition-all duration-normal hover:bg-btn-secondary-bg-hover"
                 >
                   View Project
                   <svg
-                    className="h-4 w-4 transition-transform duration-200 group-hover/btn:translate-x-1"
+                    className="h-4 w-4 transition-transform duration-normal group-hover/btn:translate-x-1"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"

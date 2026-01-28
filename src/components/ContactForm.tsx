@@ -48,7 +48,7 @@ const ContactForm = () => {
           required
           value={formData.name}
           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-          className="h-12 w-full rounded-xl border border-transparent bg-gray-50 px-4 text-sm transition-colors duration-200 focus:border-primary focus:outline-none"
+          className="h-12 w-full rounded-xl border border-input-border bg-input-bg px-4 text-sm text-input-text transition-colors duration-normal placeholder:text-input-placeholder focus:border-input-border-focus focus:outline-none"
           placeholder="Full Name"
         />
         <input
@@ -57,7 +57,7 @@ const ContactForm = () => {
           required
           value={formData.email}
           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-          className="h-12 w-full rounded-xl border border-transparent bg-gray-50 px-4 text-sm transition-colors duration-200 focus:border-primary focus:outline-none"
+          className="h-12 w-full rounded-xl border border-input-border bg-input-bg px-4 text-sm text-input-text transition-colors duration-normal placeholder:text-input-placeholder focus:border-input-border-focus focus:outline-none"
           placeholder="Email Address"
         />
       </div>
@@ -68,26 +68,26 @@ const ContactForm = () => {
         rows={6}
         value={formData.message}
         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-        className="w-full resize-y rounded-xl border border-transparent bg-gray-50 px-4 py-3 text-sm transition-colors duration-200 focus:border-primary focus:outline-none"
+        className="w-full resize-y rounded-xl border border-input-border bg-input-bg px-4 py-3 text-sm text-input-text transition-colors duration-normal placeholder:text-input-placeholder focus:border-input-border-focus focus:outline-none"
         placeholder="Write your Message"
       />
 
       <button
         type="submit"
         disabled={isSubmitting}
-        className="h-12 w-full rounded-xl bg-dark text-sm font-medium text-white transition-all duration-200 hover:bg-dark/90 disabled:cursor-not-allowed disabled:opacity-50"
+        className="h-12 w-full rounded-xl bg-btn-primary-bg text-sm font-medium text-btn-primary-text transition-all duration-normal hover:bg-btn-primary-bg-hover disabled:cursor-not-allowed disabled:opacity-50"
       >
         {isSubmitting ? 'Sending...' : 'Send Message'}
       </button>
 
       {submitStatus === 'success' && (
-        <div className="rounded-xl border border-green-accent bg-green-accent/10 p-4 text-center text-sm text-green-accent">
+        <div className="rounded-xl border border-success bg-success-light p-4 text-center text-sm text-success-dark">
           Thank you! Your message has been sent successfully.
         </div>
       )}
 
       {submitStatus === 'error' && (
-        <div className="rounded-xl border border-red-300 bg-red-50 p-4 text-center text-sm text-red-600">
+        <div className="rounded-xl border border-error bg-error-light p-4 text-center text-sm text-error-dark">
           Something went wrong. Please try again or email me directly.
         </div>
       )}
