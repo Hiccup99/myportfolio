@@ -50,20 +50,16 @@ const Hero = () => {
 
   const projectPreviews = [
     {
-      image: 'hero_carousel/project_h_1.avif',
-      title: 'Dashboard Design',
+      image: 'hero_carousel/magnite.avif',
+      title: 'Magnite Configurator',
     },
     {
-      image: 'hero_carousel/project_h_2.avif',
-      title: 'Analytics Platform',
+      image: 'hero_carousel/mgverse.avif',
+      title: 'MG Metaverse',
     },
     {
-      image: 'hero_carousel/project_h_3.avif',
-      title: 'Mobile App',
-    },
-    {
-      image: 'hero_carousel/project_h_4.avif',
-      title: 'Landing Page',
+      image: 'hero_carousel/xtrail.avif',
+      title: 'Xtrail Configurator',
     },
   ]
 

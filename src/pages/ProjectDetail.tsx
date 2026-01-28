@@ -100,11 +100,11 @@ const ProjectDetail = () => {
               {project.solutionImages && project.solutionImages.length > 0 && (
                 <div>
                   {project.solutionImages.map((img, index) => (
-                    <div key={index} className="overflow-hidden rounded-[16px] bg-gray-100">
+                    <div key={index} className="overflow-hidden rounded-[16px] bg-black">
                       <img
                         src={img}
                         alt={`Solution ${index + 1}`}
-                        className="aspect-square w-full object-cover"
+                        className="aspect-square w-full object-contain"
                       />
                     </div>
                   ))}
