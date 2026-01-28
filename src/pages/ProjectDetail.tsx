@@ -11,12 +11,12 @@ const ProjectDetail = () => {
 
   if (!project) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-bg-primary">
+      <div className="bg-bg-primary flex min-h-screen items-center justify-center">
         <div className="text-center">
-          <h1 className="mb-4 text-2xl font-semibold text-text-primary">Project not found</h1>
+          <h1 className="text-text-primary mb-4 text-2xl font-semibold">Project not found</h1>
           <button
             onClick={() => navigate('/')}
-            className="text-text-secondary transition-colors hover:text-text-primary"
+            className="text-text-secondary hover:text-text-primary transition-colors"
           >
             Go back home
           </button>
@@ -26,15 +26,15 @@ const ProjectDetail = () => {
   }
 
   return (
-    <div className="min-h-screen bg-bg-primary">
+    <div className="bg-bg-primary min-h-screen">
       <Navigation />
-      <div className="mx-auto max-w-[900px] border-l border-r border-border">
+      <div className="border-border mx-auto max-w-[900px] border-l border-r">
         <main className="pb-20 pt-32">
           <div className="mx-auto max-w-[550px] px-6 md:px-9">
             {/* Go back link */}
             <button
               onClick={() => navigate('/')}
-              className="mb-8 inline-flex items-center gap-2 text-text-secondary transition-colors hover:text-text-primary"
+              className="text-text-secondary hover:text-text-primary mb-8 inline-flex items-center gap-2 transition-colors"
             >
               <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path
@@ -49,7 +49,7 @@ const ProjectDetail = () => {
 
             {/* Header - Title and Live Website button */}
             <div className="mb-12 flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
-              <h1 className="md:text-1xl text-2xl font-semibold leading-tight text-text-primary">
+              <h1 className="md:text-1xl text-text-primary text-2xl font-semibold leading-tight">
                 {project.title}
               </h1>
               {project.liveUrl && (
@@ -57,7 +57,7 @@ const ProjectDetail = () => {
                   href={project.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 whitespace-nowrap rounded-full border border-border px-6 py-3 text-sm font-medium text-text-primary transition-colors hover:bg-bg-secondary"
+                  className="border-border text-text-primary hover:bg-bg-secondary inline-flex items-center gap-2 whitespace-nowrap rounded-full border px-6 py-3 text-sm font-medium transition-colors"
                 >
                   Live Website
                   <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -74,7 +74,7 @@ const ProjectDetail = () => {
 
             {/* Hero Image - Device Mockup */}
             <div className="mb-16">
-              <div className="rounded-[24px] bg-mockup-frame p-6 shadow-sm">
+              <div className="bg-mockup-frame rounded-[24px] p-6 shadow-sm">
                 <div className="overflow-hidden rounded-[16px]">
                   <img
                     src={project.image}
@@ -87,14 +87,14 @@ const ProjectDetail = () => {
 
             {/* Project Overview */}
             <section className="mb-16">
-              <h2 className="mb-4 text-2xl font-semibold text-text-primary">Project Overview</h2>
-              <p className="leading-relaxed text-text-secondary">{project.overview}</p>
+              <h2 className="text-text-primary mb-4 text-2xl font-semibold">Project Overview</h2>
+              <p className="text-text-secondary leading-relaxed">{project.overview}</p>
             </section>
 
             {/* Solution */}
             <section className="mb-16">
-              <h2 className="mb-4 text-2xl font-semibold text-text-primary">Solution</h2>
-              <p className="mb-8 leading-relaxed text-text-secondary">{project.solution}</p>
+              <h2 className="text-text-primary mb-4 text-2xl font-semibold">Solution</h2>
+              <p className="text-text-secondary mb-8 leading-relaxed">{project.solution}</p>
 
               {/* Solution Images */}
               {project.solutionImages && project.solutionImages.length > 0 && (
@@ -114,11 +114,11 @@ const ProjectDetail = () => {
 
             {/* Get in touch section */}
             <section className="pt-8">
-              <h2 className="mb-4 text-2xl font-semibold text-text-primary">Get in touch</h2>
-              <p className="mb-8 leading-relaxed text-text-secondary">
+              <h2 className="text-text-primary mb-4 text-2xl font-semibold">Get in touch</h2>
+              <p className="text-text-secondary mb-8 leading-relaxed">
                 I'm always interested in exploring new opportunities, collaborating, or exchanging
-                ideas with like-minded individuals. Feel free to book a call or email me if you'd
-                like to see my portfolio deck or to discuss a potential project.
+                ideas with like-minded individuals. Feel free to email me if you'd like to discuss a
+                potential project.
               </p>
 
               <ContactForm />
