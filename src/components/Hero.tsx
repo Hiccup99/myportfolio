@@ -50,19 +50,19 @@ const Hero = () => {
 
   const projectPreviews = [
     {
-      image: '/Project_H_1.png',
+      image: 'hero_carousel/project_h_1.avif',
       title: 'Dashboard Design',
     },
     {
-      image: '/Project_H_2.png',
+      image: 'hero_carousel/project_h_2.avif',
       title: 'Analytics Platform',
     },
     {
-      image: '/Project_H_3.jpg',
+      image: 'hero_carousel/project_h_3.avif',
       title: 'Mobile App',
     },
     {
-      image: '/Project_H_4.avif',
+      image: 'hero_carousel/project_h_4.avif',
       title: 'Landing Page',
     },
   ]
@@ -76,7 +76,7 @@ const Hero = () => {
           <div className="mb-6">
             <div className="w-[100px] h-[100px] rounded-full overflow-hidden">
               <img
-                src="/Sid_DP.jpg"
+                src="/dp.avif"
                 alt="Profile"
                 className="w-full h-full object-cover"
               />

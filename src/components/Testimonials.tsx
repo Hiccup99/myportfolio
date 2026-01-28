@@ -56,21 +56,21 @@ const Testimonials = () => {
         "I’ve had the privilege of knowing Sidharth and can confidently say he is one of those rare leaders who combines deep product thinking with a true builder’s mindset. As a founding-member-type leader, Sidharth consistently takes ownership beyond his mandate—whether it was launching entirely new product verticals, shaping strategy, or rolling up his sleeves to solve hard execution problems. He has an exceptional ability to connect customer insight, business outcomes, and technical feasibility, and then drive teams with clarity and conviction.",
       name: 'Siddharth Sachar',
       role: 'Founder\'s Office',
-      avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face',
+      avatar: '/testimonial-faces/sachar.avif',
     },
     {
       quote:
         "Sidharth is one of the most diligent and focused product managers I have worked with. He is superb at execution and rallying the team. I had a wonderful time with him during his growth journey at Metadome.",
       name: 'Kanav Singla',
       role: 'CEO',
-      avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face',
+      avatar: '/testimonial-faces/kanav.avif',
     },
     {
       quote:
         "Sidharth is the ideal counterpart for any Engineering Manager. We worked together for four years, transitioning from individual contributors to leadership roles. We worked together on Autodome (Immersive Auto-sales experiences). His sense of ownership was unmatched; he fights for the product’s success as if it were his own, ensuring execution no matter the obstacles. He had then seamlessly transitioned this intensity to his work on an AI-powered Virtual Sales Assistant. He is a leader who takes absolute accountability and delivers results.",
       name: 'Ashish Dasari',
       role: 'Engineer Manager',
-      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face',
+      avatar: '/testimonial-faces/ashish.avif',
     },
     {
       quote:

@@ -27,7 +27,7 @@ const Navigation = () => {
             className="w-9 h-9 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors"
             aria-label="LinkedIn"
           >
-           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.2" className="bi bi-linkedin" viewBox="0 0 16 16">
+           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.2" className="bi bi-linkedin" viewBox="0 0 16 16">
           <path d="M1.2.5h13.6c.39 0 .7.32.7.72v13.56c0 .4-.31.72-.7.72H1.2a.71.71 0 0 1-.7-.72V1.22c0-.4.31-.72.7-.72zM4.8 13V6.2M4.8 4.1h.01M7.2 13V9.3c0-.3.03-.6.13-.82.28-.6.9-1.22 1.95-1.22 1.38 0 1.94 1.05 1.94 2.58V13"/>
         </svg>
           </a>

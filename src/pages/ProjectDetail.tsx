@@ -1,33 +1,13 @@
-import { useState, FormEvent } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { getProjectById } from '../data/projects'
 import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
+import ContactForm from '../components/ContactForm'
 
 const ProjectDetail = () => {
   const { id } = useParams<{ id: string }>()
   const navigate = useNavigate()
   const project = id ? getProjectById(id) : undefined
-
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
-
-  const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-
-    setTimeout(() => {
-      setIsSubmitting(false)
-      setSubmitStatus('success')
-      setFormData({ name: '', email: '', message: '' })
-      setTimeout(() => setSubmitStatus('idle'), 3000)
-    }, 1000)
-  }
 
   if (!project) {
     return (
@@ -50,7 +30,6 @@ const ProjectDetail = () => {
       <Navigation />
       <div className="max-w-[900px] mx-auto border-l border-r border-gray-200">
         <main className="pt-32 pb-20">
-          {/* Centered content container */}
           <div className="max-w-[550px] mx-auto px-6 md:px-9">
             {/* Go back link */}
             <button
@@ -156,50 +135,7 @@ const ProjectDetail = () => {
                 potential project.
               </p>
 
-              {/* Contact Form */}
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <input
-                    type="text"
-                    required
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full h-12 px-4 text-sm bg-gray-50 border border-transparent rounded-xl focus:outline-none focus:border-primary transition-colors duration-200"
-                    placeholder="Full Name"
-                  />
-                  <input
-                    type="email"
-                    required
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full h-12 px-4 text-sm bg-gray-50 border border-transparent rounded-xl focus:outline-none focus:border-primary transition-colors duration-200"
-                    placeholder="Email Address"
-                  />
-                </div>
-
-                <textarea
-                  required
-                  rows={6}
-                  value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full px-4 py-3 text-sm bg-gray-50 border border-transparent rounded-xl focus:outline-none focus:border-primary transition-colors duration-200 resize-y"
-                  placeholder="Write your Message"
-                />
-
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full h-12 bg-dark text-white text-sm rounded-xl hover:bg-dark/90 transition-all duration-200 font-medium disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
-                </button>
-
-                {submitStatus === 'success' && (
-                  <div className="p-4 bg-green-accent/10 border border-green-accent rounded-xl text-green-accent text-center text-sm">
-                    Thank you! Your message has been sent successfully.
-                  </div>
-                )}
-              </form>
+              <ContactForm />
             </section>
           </div>
         </main>

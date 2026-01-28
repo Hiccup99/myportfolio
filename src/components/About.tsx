@@ -32,7 +32,7 @@ const About = () => {
           {/* Photo 1 - Behind, tilted left */}
           <div className="absolute -rotate-6 bg-white p-2 shadow-lg z-10 -translate-x-8">
             <img
-              src="/Interstellar.jpg"
+              src="about/interstellar.avif"
               alt="Travel photo"
               className="w-[180px] h-[150px] object-cover"
             />
@@ -42,7 +42,7 @@ const About = () => {
           {/* Photo 2 - Front, tilted right */}
           <div className="absolute rotate-6 bg-white p-2 shadow-lg z-9 translate-x-20 translate-y-20">
             <img
-              src="/Paint.jpg"
+              src="about/paint.avif"
               alt="Japan photo"
               className="w-[180px] h-[180px] object-cover"
             />
