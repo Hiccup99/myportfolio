@@ -1,26 +1,9 @@
+import { Link } from 'react-router-dom'
 import { useScrollAnimation } from '../hooks/useScrollAnimation'
+import { projects } from '../data/projects'
 
 const Projects = () => {
   const { ref, isVisible } = useScrollAnimation()
-
-  const projects = [
-    {
-      id: 1,
-      title: '3D Product Visualizers',
-      description:
-        'Discover is a 3D Product Visualisation suite that enables brands to offer highly engaging and reaslitc car buying experience to their customers',
-      image: '/Project_1.png',
-      link: '#',
-    },
-    {
-      id: 2,
-      title: 'AI Conversational Bot for Car Dealerships',
-      description:
-        'An AI assistant that provides customers with round the clock, real-time support. The assistant serves as a knowledgeable and responsive digital partner for both pre-sale and post-sale services ',
-      image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=500&fit=crop',
-      link: '#',
-    },
-  ]
 
   return (
     <section id="projects" className="pt-[40px] pb-[70px] px-6 md:px-9">
@@ -47,37 +30,45 @@ const Projects = () => {
         {/* Projects List */}
         <div className="space-y-8">
           {projects.map((project) => (
-            <div key={project.id} className="group border border-gray-200 rounded-2xl overflow-hidden">
-              {/* Laptop Mockup */}
-              <div className="bg-[#e8e8e8] p-3">
-                <div className="bg-black rounded-lg overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full aspect-[16/10] object-contain"
-                  />
+            <div key={project.id} className="group rounded-[28px] border border-gray-200 bg-white shadow-sm">
+              {/* Device Mockup Container */}
+              <div className="p-5">
+                <div className="bg-[#f5f5f5] rounded-[16px] p-4">
+                  {/* Screen */}
+                  <div className="rounded-[12px] overflow-hidden">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className={`w-full aspect-[16/10] object-${project.imageFit}`}
+                    />
+                  </div>
                 </div>
               </div>
 
-              {/* Project Info - Inside the card */}
-              <div className="p-5">
+              {/* Project Info */}
+              <div className="px-5 pb-6">
                 <h3 className="text-xl font-semibold text-dark mb-2">
                   {project.title}
                 </h3>
-                <p className="text-dark-light text-sm mb-4 leading-relaxed">
+                <p className="text-dark-light text-sm mb-5 leading-relaxed">
                   {project.description}
                 </p>
 
                 {/* View Project Button */}
-                <a
-                  href={project.link}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-gray-100 rounded-full text-sm font-medium text-dark hover:bg-gray-200 transition-colors"
+                <Link
+                  to={project.link}
+                  className="group/btn inline-flex items-center gap-2 px-6 py-3 bg-gray-100 rounded-full text-sm font-medium text-dark hover:bg-gray-200 transition-all duration-200"
                 >
                   View Project
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg
+                    className="w-4 h-4 transition-transform duration-200 group-hover/btn:translate-x-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
-                </a>
+                </Link>
               </div>
             </div>
           ))}

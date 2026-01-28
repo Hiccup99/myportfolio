@@ -1,7 +1,54 @@
+import { useEffect, useRef, useState } from 'react'
 import { useScrollAnimation } from '../hooks/useScrollAnimation'
 
 const Testimonials = () => {
   const { ref, isVisible } = useScrollAnimation()
+  const scrollRef = useRef<HTMLDivElement>(null)
+  const [isHovered, setIsHovered] = useState(false)
+  const positionRef = useRef(0)
+  const speedRef = useRef(0.8)
+  const targetSpeedRef = useRef(0.8)
+
+  const NORMAL_SPEED = 0.8
+  const SLOW_SPEED = 0.2
+
+  useEffect(() => {
+    targetSpeedRef.current = isHovered ? SLOW_SPEED : NORMAL_SPEED
+  }, [isHovered])
+
+  useEffect(() => {
+    let animationId: number
+
+    const animate = () => {
+      if (!scrollRef.current) return
+
+      // Smoothly interpolate current speed towards target speed
+      speedRef.current += (targetSpeedRef.current - speedRef.current) * 0.05
+
+      positionRef.current += speedRef.current
+
+      // Calculate the exact loop point: (itemWidth + gap) * number of original items
+      const items = scrollRef.current.children
+      const itemCount = items.length / 2
+      const firstItem = items[0] as HTMLElement
+      const itemWidth = firstItem.offsetWidth
+      const gap = 20 // gap-5 = 1.25rem = 20px
+      const loopPoint = itemCount * (itemWidth + gap)
+
+      // Reset position for seamless loop
+      if (positionRef.current >= loopPoint) {
+        positionRef.current -= loopPoint
+      }
+
+      scrollRef.current.style.transform = `translateX(-${positionRef.current}px)`
+
+      animationId = requestAnimationFrame(animate)
+    }
+
+    animationId = requestAnimationFrame(animate)
+
+    return () => cancelAnimationFrame(animationId)
+  }, [])
 
   const testimonials = [
     {
@@ -54,8 +101,12 @@ const Testimonials = () => {
         </div>
 
         {/* Testimonials Scroll - Breaks out of container */}
-        <div className="overflow-hidden w-screen relative left-1/2 -translate-x-1/2">
-          <div className="flex gap-5 animate-scroll">
+        <div
+          className="overflow-hidden w-screen relative left-1/2 -translate-x-1/2"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          <div ref={scrollRef} className="flex gap-5">
             {[...testimonials, ...testimonials].map((testimonial, index) => (
               <div
                 key={index}

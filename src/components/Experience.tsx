@@ -40,7 +40,7 @@ const Experience = () => {
         {/* Experience List */}
         <div className="space-y-6">
           {experiences.map((exp, index) => (
-            <div key={index} className="flex items-center gap-6 md:gap-12">
+            <div key={index} className="flex items-center gap-6 md:gap-4">
               {/* Period */}
               <span className="text-sm text-secondary w-[120px] shrink-0">
                 {exp.period}
