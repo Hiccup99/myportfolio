@@ -23,32 +23,13 @@ const Footer = () => {
         </svg>
       ),
     },
-    {
-      name: 'Email',
-      url: 'mailto:sidharth037@gmail.com',
-      icon: (
-        <svg
-          className="h-5 w-5"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          strokeWidth={1.5}
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
-          />
-        </svg>
-      ),
-    },
   ]
 
   return (
     <footer className="px-6 py-10 md:px-9">
       <div className="mx-auto max-w-2xl text-center">
         {/* Copyright */}
-        <p className="mb-6 text-sm text-text-secondary">
+        <p className="text-text-secondary mb-6 text-sm">
           Copyright &copy; {new Date().getFullYear()} Sidharth Suresh. All rights reserved.
         </p>
 
@@ -60,7 +41,7 @@ const Footer = () => {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-text-primary transition-colors hover:text-brand-primary"
+              className="text-text-primary hover:text-brand-primary transition-colors"
               aria-label={link.name}
             >
               {link.icon}
