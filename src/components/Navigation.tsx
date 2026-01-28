@@ -24,7 +24,7 @@ const Navigation = () => {
       ),
     },
     {
-      href: 'https://x.com/Sid_0597',
+      href: 'https://www.linkedin.com/in/sidharthsuresh/',
       label: 'LinkedIn',
       external: true,
       icon: (
@@ -121,7 +121,7 @@ const Navigation = () => {
           <div className="mx-0.5 h-5 w-px bg-gray-200" />
           <div className="group relative">
             <a
-              href="https://x.com/Sid_0597"
+              href="https://www.linkedin.com/in/sidharthsuresh/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex h-9 w-9 items-center justify-center rounded-full transition-colors hover:bg-gray-100"
