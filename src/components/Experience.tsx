@@ -36,16 +36,16 @@ const Experience = () => {
         <h2 className="mb-10 text-2xl font-semibold text-dark md:text-3xl">Work Experience</h2>
 
         {/* Experience List */}
-        <div className="space-y-6">
+        <div className="space-y-8">
           {experiences.map((exp, index) => (
-            <div key={index} className="flex items-center gap-6 md:gap-4">
+            <div key={index}>
               {/* Period */}
-              <span className="w-[120px] shrink-0 text-sm text-secondary">{exp.period}</span>
+              <p className="mb-2 text-sm text-secondary">{exp.period}</p>
 
               {/* Role and Company */}
               <div className="flex flex-wrap items-center gap-2">
-                <span className="text-base text-dark">{exp.role}</span>
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-gray-200 bg-white px-3 py-1 text-sm font-medium">
+                <span className="text-base text-dark">{exp.role} at</span>
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-gray-200 bg-white px-3 py-1.5 text-sm font-medium">
                   {exp.logo && <span>{exp.logo}</span>}
                   {exp.company}
                 </span>
