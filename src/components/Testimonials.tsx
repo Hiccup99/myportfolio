@@ -55,21 +55,28 @@ const Testimonials = () => {
       quote:
         "I've had the privilege of knowing Sidharth and can confidently say he is one of those rare leaders who combines deep product thinking with a true builder's mindset. As a founding-member-type leader, Sidharth consistently takes ownership beyond his mandate—whether it was launching entirely new product verticals, shaping strategy, or rolling up his sleeves to solve hard execution problems. He has an exceptional ability to connect customer insight, business outcomes, and technical feasibility, and then drive teams with clarity and conviction.",
       name: 'Siddharth Sachar',
-      role: "Founder's Office",
+      role: "Founder's Office @ Renegade Insurance",
       avatar: '/testimonial-faces/sachar.avif',
     },
     {
       quote:
         'Sidharth is one of the most diligent and focused product managers I have worked with. He is superb at execution and rallying the team. I had a wonderful time with him during his growth journey at Metadome.',
       name: 'Kanav Singla',
-      role: 'CEO',
+      role: 'CEO @ Metadome.ai',
       avatar: '/testimonial-faces/kanav.avif',
+    },
+    {
+      quote:
+        'Working with Sidharth for more than 3.5 years has genuinely changed the way I look at building products. Every conversation with him reflects how deeply passionate he is about what he creates, and that energy naturally elevates the people around him. Beyond being a strong PM, he is also the person people naturally turn to when they are stuck with tech or idea roadblocks. Anyone who gets the chance to work with him will walk away with a fresh perspective, stronger thinking, and a better standard of collaboration.',
+      name: 'Kritika Sharma',
+      role: 'Desig Lead @ Meraki Labs',
+      avatar: '/testimonial-faces/kritika.avif',
     },
     {
       quote:
         "Sidharth is the ideal counterpart for any Engineering Manager. We worked together for four years, transitioning from individual contributors to leadership roles. We worked together on Autodome (Immersive Auto-sales experiences). His sense of ownership was unmatched; he fights for the product's success as if it were his own, ensuring execution no matter the obstacles. He had then seamlessly transitioned this intensity to his work on an AI-powered Virtual Sales Assistant. He is a leader who takes absolute accountability and delivers results.",
       name: 'Ashish Dasari',
-      role: 'Engineer Manager',
+      role: 'Engineer Manager @ Metadome.ai',
       avatar: '/testimonial-faces/ashish.avif',
     },
     {
