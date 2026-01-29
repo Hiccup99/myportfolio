@@ -72,7 +72,7 @@ const Navigation = () => {
       ),
     },
     {
-      href: 'https://drive.google.com/file/d/1XtIJRHrolPf7c8zANag-vVwOvLQFkziW/view?usp=sharing',
+      href: 'https://drive.google.com/file/d/1CfltjEtf1xieA4ukeClY21Shc-zs8R6j/view?usp=drive_link',
       label: 'Resume',
       external: true,
       icon: (
@@ -157,7 +157,7 @@ const Navigation = () => {
 
           <div className="group relative">
             <a
-              href="https://drive.google.com/file/d/1XtIJRHrolPf7c8zANag-vVwOvLQFkziW/view?usp=sharing"
+              href="https://drive.google.com/file/d/1CfltjEtf1xieA4ukeClY21Shc-zs8R6j/view?usp=drive_link"
               target="_blank"
               className="hover:bg-nav-hover flex h-9 w-9 items-center justify-center rounded-full transition-colors"
               aria-label="Resume"
