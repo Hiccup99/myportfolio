@@ -81,11 +81,11 @@ const Hero = () => {
               isLoaded ? 'translate-y-0 scale-100 opacity-100' : 'translate-y-4 scale-95 opacity-0'
             }`}
           >
-            <div className="h-[100px] w-[100px] overflow-hidden rounded-full transition-transform duration-300 hover:scale-105">
+            <div className="group h-[100px] w-[100px] overflow-hidden rounded-full transition-transform duration-300 hover:scale-105">
               <img
                 src="/misc/dp.avif"
                 alt="Profile"
-                className="h-full w-full object-cover grayscale"
+                className="h-full w-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0"
               />
             </div>
           </div>
