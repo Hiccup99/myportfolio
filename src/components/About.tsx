@@ -57,7 +57,7 @@ const About = () => {
               className="h-[180px] w-[180px] object-cover"
             />
             <p className="text-text-secondary mt-2 text-[10px] italic">
-              Chasing Waves, Not Worries?
+              Chasing Waves, Not Worries.
             </p>
           </div>
         </div>
