@@ -74,7 +74,7 @@ const ProjectDetail = () => {
 
             {/* Hero Image - Device Mockup */}
             <div className="mb-16">
-              <div className="bg-mockup-frame rounded-[24px] p-6 shadow-sm">
+              <div className="bg-mockup-frame rounded-[24px] shadow-sm">
                 <div className="overflow-hidden rounded-[16px]">
                   <img
                     src={project.image}
@@ -85,20 +85,26 @@ const ProjectDetail = () => {
               </div>
             </div>
 
-            {/* Project Overview */}
-            <section className="mb-16">
-              <h2 className="text-text-primary mb-4 text-2xl font-semibold">Project Overview</h2>
+            {/* Overview */}
+            <section className="mb-12">
+              <h2 className="text-text-primary mb-4 text-xl font-semibold">Overview</h2>
               <p className="text-text-secondary leading-relaxed">{project.overview}</p>
             </section>
 
-            {/* Solution */}
-            <section className="mb-16">
-              <h2 className="text-text-primary mb-4 text-2xl font-semibold">Solution</h2>
-              <p className="text-text-secondary mb-8 leading-relaxed">{project.solution}</p>
+            {/* The Challenge */}
+            <section className="mb-12">
+              <h2 className="text-text-primary mb-4 text-xl font-semibold">The Challenge</h2>
+              <p className="text-text-secondary leading-relaxed">{project.challenge}</p>
+            </section>
+
+            {/* The Solution */}
+            <section className="mb-12">
+              <h2 className="text-text-primary mb-4 text-xl font-semibold">The Solution</h2>
+              <p className="text-text-secondary leading-relaxed">{project.solution}</p>
 
               {/* Solution Images */}
               {project.solutionImages && project.solutionImages.length > 0 && (
-                <div>
+                <div className="mt-8">
                   {project.solutionImages.map((img, index) => (
                     <div key={index} className="overflow-hidden rounded-[16px] bg-black">
                       <img
@@ -112,13 +118,36 @@ const ProjectDetail = () => {
               )}
             </section>
 
+            {/* The Impact */}
+            <section className="mb-12">
+              <h2 className="text-text-primary mb-4 text-xl font-semibold">The Impact</h2>
+              <p className="text-text-secondary leading-relaxed">{project.impact}</p>
+            </section>
+
+            {/* The Results */}
+            {project.results && project.results.length > 0 && (
+              <section className="mb-16">
+                <h2 className="text-text-primary mb-6 text-xl font-semibold">The Results</h2>
+                <div className="grid grid-cols-2 gap-4">
+                  {project.results.map((result, index) => (
+                    <div
+                      key={index}
+                      className="border-card-border bg-card-bg rounded-2xl border p-5 text-center"
+                    >
+                      <p className="text-text-primary mb-1 text-2xl font-bold">{result.value}</p>
+                      <p className="text-text-muted text-sm">{result.label}</p>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
+
             {/* Get in touch section */}
             <section className="pt-8">
-              <h2 className="text-text-primary mb-4 text-2xl font-semibold">Get in touch</h2>
+              <h2 className="text-text-primary mb-4 text-xl font-semibold">Get in touch</h2>
               <p className="text-text-secondary mb-8 leading-relaxed">
-                I'm always interested in exploring new opportunities, collaborating, or exchanging
-                ideas with like-minded individuals. Feel free to email me if you'd like to discuss a
-                potential project.
+                Interested in working together or learning more about this project? Feel free to
+                reach out.
               </p>
 
               <ContactForm />

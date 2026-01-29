@@ -59,9 +59,15 @@ const BrandLogoCarousel = ({ brands }: BrandLogoCarouselProps) => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Edge fade gradients */}
-      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-8 bg-gradient-to-r from-card-bg to-transparent" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-8 bg-gradient-to-l from-card-bg to-transparent" />
+      {/* Edge fade gradients - subtle */}
+      <div
+        className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12"
+        style={{ background: 'linear-gradient(to right, var(--color-card-bg) 0%, var(--color-card-bg) 20%, transparent 100%)' }}
+      />
+      <div
+        className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12"
+        style={{ background: 'linear-gradient(to left, var(--color-card-bg) 0%, var(--color-card-bg) 20%, transparent 100%)' }}
+      />
 
       <div ref={scrollRef} className="flex gap-4">
         {/* Duplicate brands for infinite scroll */}

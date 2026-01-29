@@ -82,7 +82,11 @@ const Hero = () => {
             }`}
           >
             <div className="h-[100px] w-[100px] overflow-hidden rounded-full transition-transform duration-300 hover:scale-105">
-              <img src="/dp.avif" alt="Profile" className="h-full w-full object-cover grayscale" />
+              <img
+                src="/misc/dp.avif"
+                alt="Profile"
+                className="h-full w-full object-cover grayscale"
+              />
             </div>
           </div>
 
@@ -139,30 +143,18 @@ const Hero = () => {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        {/* Edge fade gradients */}
-        <div className="from-bg-primary pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r to-transparent md:w-16" />
-        <div className="from-bg-primary pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l to-transparent md:w-16" />
         <div ref={scrollRef} className="flex gap-6">
           {/* Duplicate items for infinite scroll effect */}
           {[...projectPreviews, ...projectPreviews].map((project, index) => (
             <div key={index} className="group w-[340px] flex-shrink-0 md:w-[480px]">
-              {/* Tablet Mockup - Outer frame with pinholes */}
-              <div className="bg-mockup-frame relative rounded-[20px] p-5 shadow-sm transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-md">
-                {/* Corner pinholes on outer frame */}
-                <div className="bg-mockup-accent absolute left-2.5 top-2.5 h-[6px] w-[6px] rounded-full" />
-                <div className="bg-mockup-accent absolute right-2.5 top-2.5 h-[6px] w-[6px] rounded-full" />
-                <div className="bg-mockup-accent absolute bottom-2.5 left-2.5 h-[6px] w-[6px] rounded-full" />
-                <div className="bg-mockup-accent absolute bottom-2.5 right-2.5 h-[6px] w-[6px] rounded-full" />
-                {/* Inner bezel */}
-                <div className="bg-mockup-bezel rounded-custom p-2">
-                  {/* Screen */}
-                  <div className="overflow-hidden rounded-[10px]">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="h-[220px] w-full object-cover transition-transform duration-500 group-hover:scale-105 md:h-[280px]"
-                    />
-                  </div>
+              {/* Clean card design */}
+              <div className="overflow-hidden rounded-2xl bg-gradient-to-b from-white/5 to-transparent p-[1px] transition-all duration-300 group-hover:-translate-y-1">
+                <div className="bg-card-bg overflow-hidden rounded-2xl">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="h-[220px] w-full object-cover transition-transform duration-500 group-hover:scale-105 md:h-[280px]"
+                  />
                 </div>
               </div>
             </div>
