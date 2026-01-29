@@ -84,8 +84,7 @@ const Testimonials = () => {
         'Sidharth brings deep experience in building products from zero to one, with a strong focus on scale and long term impact. What stands out most is his analytical approach combined with a friendly, approachable nature and a strong sense of urgency. This balance helps the entire team stay motivated, aligned, and consistently operate at their highest capacity. On a personal level, his guidance played a key role in shaping my career direction. His natural instinct for problem identification, validation, and structured problem solving is exceptional',
       name: 'Ashwani Kottapalli',
       role: 'Building @ EF',
-      avatar:
-        'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face',
+      avatar: '/testimonial-faces/ashwani.avif',
     },
   ]
 
