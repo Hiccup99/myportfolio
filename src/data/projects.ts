@@ -1,3 +1,8 @@
+export interface Brand {
+  name: string
+  logo: string
+}
+
 export interface Project {
   id: string
   title: string
@@ -12,6 +17,8 @@ export interface Project {
   role?: string[]
   caseStudyUrl?: string
   impactUrl?: string
+  brands?: Brand[]
+  brandsDisplayMode?: 'loop' | 'static'
 }
 
 export const projects: Project[] = [
@@ -39,6 +46,16 @@ export const projects: Project[] = [
       'Cross-Functional Leadership',
       '0->1->10 Product Execution',
     ],
+    brands: [
+      { name: 'Brand 1', logo: '/brands/autodome/gm.avif' },
+      { name: 'Brand 2', logo: '/brands/autodome/harleydavidson.avif' },
+      { name: 'Brand 3', logo: '/brands/autodome/hero.avif' },
+      { name: 'Brand 4', logo: '/brands/autodome/mg.avif' },
+      { name: 'Brand 5', logo: '/brands/autodome/nissan.avif' },
+      { name: 'Brand 6', logo: '/brands/autodome/royalenfield.avif' },
+      { name: 'Brand 7', logo: '/brands/autodome/vinfast.avif' },
+    ],
+    brandsDisplayMode: 'loop',
   },
   {
     id: 'ai-conversational-bot',
@@ -63,6 +80,11 @@ export const projects: Project[] = [
       '0->1 Product Execution',
       'Cross-Functional Leadership',
     ],
+    brands: [
+      { name: 'Brand 1', logo: '/brands/aivsa/alj.avif' },
+      { name: 'Brand 2', logo: '/brands/aivsa/vinfast.avif' },
+    ],
+    brandsDisplayMode: 'static',
   },
 ]
 

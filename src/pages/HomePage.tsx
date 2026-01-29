@@ -2,6 +2,7 @@ import Navigation from '../components/Navigation'
 import Hero from '../components/Hero'
 import About from '../components/About'
 import Projects from '../components/Projects'
+import Awards from '../components/Awards'
 import Experience from '../components/Experience'
 import Testimonials from '../components/Testimonials'
 import Contact from '../components/Contact'
@@ -17,6 +18,7 @@ const HomePage = () => {
           <Hero />
           <About />
           <Projects />
+          <Awards />
           <Experience />
           <Testimonials />
           <Contact />

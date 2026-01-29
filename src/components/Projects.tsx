@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useScrollAnimation } from '../hooks/useScrollAnimation'
 import { projects } from '../data/projects'
+import BrandLogoCarousel from './BrandLogoCarousel'
 
 const Projects = () => {
   const { ref, isVisible } = useScrollAnimation()
@@ -9,13 +10,13 @@ const Projects = () => {
     <section id="projects" className="px-6 py-[70px] md:px-9">
       <div
         ref={ref}
-        className={`mx-auto max-w-[500px] transition-all duration-slower ${
+        className={`duration-slower mx-auto max-w-[500px] transition-all ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}
       >
         <div className="mb-10 text-center">
-          <h2 className="text-2xl font-semibold text-text-primary md:text-3xl">
-            Here's What I've Been Up To.
+          <h2 className="text-text-primary text-2xl font-semibold md:text-3xl">
+            From Idea to Impact: Delivering Measurable Value
           </h2>
         </div>
 
@@ -24,11 +25,11 @@ const Projects = () => {
           {projects.map((project) => (
             <div
               key={project.id}
-              className="group rounded-[28px] border border-card-border bg-card-bg shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+              className="border-card-border bg-card-bg group rounded-[28px] border shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
             >
               {/* Device Mockup Container */}
               <div className="p-5">
-                <div className="rounded-[16px] bg-bg-secondary p-4">
+                <div className="bg-bg-secondary rounded-[16px] p-4">
                   {/* Screen */}
                   <div className="overflow-hidden rounded-[12px]">
                     <img
@@ -42,27 +43,52 @@ const Projects = () => {
 
               {/* Project Info */}
               <div className="px-5 pb-6">
-                <h3 className="mb-2 text-xl font-semibold text-text-primary">{project.title}</h3>
-                <p className="mb-5 text-sm leading-relaxed text-text-secondary">
+                <h3 className="text-text-primary mb-2 text-xl font-semibold">{project.title}</h3>
+                <p className="text-text-secondary mb-5 text-sm leading-relaxed">
                   {project.description}
                 </p>
 
                 {/* My Role */}
                 {project.role && project.role.length > 0 && (
                   <div className="mb-4">
-                    <span className="mb-2 block text-[10px] font-semibold uppercase tracking-wide text-text-muted">
+                    <span className="text-text-muted mb-2 block text-[10px] font-semibold uppercase tracking-wide">
                       My Role
                     </span>
                     <div className="flex flex-wrap gap-1.5">
                       {project.role.map((role, index) => (
                         <span
                           key={index}
-                          className="rounded-md border border-border bg-bg-secondary px-2 py-0.5 text-[12px] text-text-secondary"
+                          className="border-border bg-bg-secondary text-text-secondary rounded-md border px-2 py-0.5 text-[12px]"
                         >
                           {role}
                         </span>
                       ))}
                     </div>
+                  </div>
+                )}
+
+                {/* Brands */}
+                {project.brands && project.brands.length > 0 && (
+                  <div className="mb-4">
+                    <span className="text-text-muted mb-2 block text-[10px] font-semibold uppercase tracking-wide">
+                      Brands
+                    </span>
+                    {project.brandsDisplayMode === 'loop' ? (
+                      <BrandLogoCarousel brands={project.brands} />
+                    ) : (
+                      <div className="flex items-center gap-4">
+                        {project.brands.map((brand, index) => (
+                          <div key={index} className="flex h-8 items-center justify-center">
+                            <img
+                              src={brand.logo}
+                              alt={brand.name}
+                              className="h-full w-auto max-w-[80px] object-contain grayscale transition-all duration-300 hover:grayscale-0"
+                              title={brand.name}
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 )}
 
@@ -73,7 +99,7 @@ const Projects = () => {
                     href={project.caseStudyUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex h-10 w-10 items-center justify-center rounded-full border border-card-border text-text-secondary transition-all duration-200 hover:scale-110 hover:bg-bg-secondary hover:text-text-primary"
+                    className="border-card-border text-text-secondary hover:bg-bg-secondary hover:text-text-primary flex h-10 w-10 items-center justify-center rounded-full border transition-all duration-200 hover:scale-110"
                     title="Case study Website"
                   >
                     <svg
@@ -97,7 +123,7 @@ const Projects = () => {
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex h-10 w-10 items-center justify-center rounded-full border border-card-border text-text-secondary transition-all duration-200 hover:scale-110 hover:bg-bg-secondary hover:text-text-primary"
+                      className="border-card-border text-text-secondary hover:bg-bg-secondary hover:text-text-primary flex h-10 w-10 items-center justify-center rounded-full border transition-all duration-200 hover:scale-110"
                       title="Live Website"
                     >
                       <svg
@@ -123,7 +149,7 @@ const Projects = () => {
                       href={project.impactUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex h-10 w-10 items-center justify-center rounded-full border border-card-border text-text-secondary transition-all duration-200 hover:scale-110 hover:bg-bg-secondary hover:text-text-primary"
+                      className="border-card-border text-text-secondary hover:bg-bg-secondary hover:text-text-primary flex h-10 w-10 items-center justify-center rounded-full border transition-all duration-200 hover:scale-110"
                       title="Impact"
                     >
                       <svg
@@ -146,11 +172,11 @@ const Projects = () => {
                 {/* View Project Button */}
                 <Link
                   to={project.link}
-                  className="group/btn inline-flex items-center gap-2 rounded-full bg-btn-secondary-bg px-6 py-3 text-sm font-medium text-btn-secondary-text transition-all duration-normal hover:bg-btn-secondary-bg-hover"
+                  className="group/btn bg-btn-secondary-bg text-btn-secondary-text duration-normal hover:bg-btn-secondary-bg-hover inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition-all"
                 >
                   View Project
                   <svg
-                    className="h-4 w-4 transition-transform duration-normal group-hover/btn:translate-x-1"
+                    className="duration-normal h-4 w-4 transition-transform group-hover/btn:translate-x-1"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
