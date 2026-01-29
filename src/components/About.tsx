@@ -40,7 +40,7 @@ const About = () => {
               className="h-[150px] w-[180px] object-cover"
             />
             <p className="text-text-secondary mt-2 text-[10px] italic">
-              Pain Temporary, Medal Permanet!
+              Pain Temporary, Medal Permanent
             </p>
           </div>
 
