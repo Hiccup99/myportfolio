@@ -20,10 +20,10 @@ const Awards = () => {
     },
     {
       title: 'Semester Abroad Scholarship',
-      org: 'SRM University',
+      org: 'UC Berkeley',
       date: 'Jan 2018',
       description:
-        "Received SRM University's scholarship of $19,900 to study at the University Of California Berkeley in the spring of 2018.",
+        'Received a scholarship of $19,900 to study at the University Of California Berkeley in the spring of 2018.',
     },
     {
       title: 'National Winner, Smart India Hackathon',
