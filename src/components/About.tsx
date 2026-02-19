@@ -35,8 +35,9 @@ const About = () => {
             style={{ transitionDelay: '200ms' }}
           >
             <img
-              src="about/marathon.avif"
-              alt="Travel photo"
+                          src="about/jet.avif"
+              alt="Japan photo"
+    
               className="h-[150px] w-[180px] object-cover"
             />
             <p className="text-text-secondary mt-2 text-[10px] italic">
@@ -52,8 +53,8 @@ const About = () => {
             style={{ transitionDelay: '400ms' }}
           >
             <img
-              src="about/jet.avif"
-              alt="Japan photo"
+           src="about/marathon.avif"
+              alt="Travel photo"
               className="h-[180px] w-[180px] object-cover"
             />
             <p className="text-text-secondary mt-2 text-[10px] italic">

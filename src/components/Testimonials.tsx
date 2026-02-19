@@ -69,7 +69,7 @@ const Testimonials = () => {
       quote:
         'Working with Sidharth for more than 3.5 years has genuinely changed the way I look at building products. Every conversation with him reflects how deeply passionate he is about what he creates, and that energy naturally elevates the people around him. Beyond being a strong PM, he is also the person people naturally turn to when they are stuck with tech or idea roadblocks. Anyone who gets the chance to work with him will walk away with a fresh perspective, stronger thinking, and a better standard of collaboration.',
       name: 'Kritika Sharma',
-      role: 'Desig Lead @ Meraki Labs',
+      role: 'Design Lead @ Meraki Labs',
       avatar: '/testimonial-faces/kritika.avif',
     },
     {
