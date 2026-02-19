@@ -201,7 +201,7 @@ const Navigation = () => {
       </nav>
 
       {/* Theme Toggle - Desktop */}
-      <button
+      {/* <button
         onClick={toggleTheme}
         className="border-nav-border bg-nav-bg text-text-secondary hover:bg-nav-hover fixed right-6 top-6 z-50 hidden items-center gap-2 rounded-full border px-3 py-2 text-xs font-medium shadow-sm transition-colors md:flex"
         aria-label="Toggle theme"
@@ -214,7 +214,7 @@ const Navigation = () => {
             }`}
           />
         </div>
-      </button>
+      </button> */}
 
       {/* Mobile Navigation */}
       <nav className="fixed right-4 top-4 z-50 md:hidden">
